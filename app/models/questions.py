@@ -1,7 +1,7 @@
 from .db import db
 
 
-class Questions(db.Model):
+class Question(db.Model):
     __tablename__ = 'questions'
 
     id = db.Column(db.Integer, primary_key=True)
@@ -10,7 +10,7 @@ class Questions(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     user = db.relationship("User", back_populates='questions')
-    answers = db.relationship("Answers", back_populates='questions')
+    answers = db.relationship("Answer", back_populates='question')
 
     def to_dict(self):
         return {
