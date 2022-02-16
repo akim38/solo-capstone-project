@@ -91,12 +91,19 @@ const questionReducer = (state = initialState, action) => {
         case LOAD_QUESTIONS: {
             newState = { ...state }
 
+            newState.byId = action.questions.questions.reduce((questions, question) => {
+                questions[question.id] = question;
+                return questions;
+            }, {});
+
+            return newState
         }
         case ADD_QUESTION: {
             newState = { ...state }
 
-            newState.byId[action.questionId] = action.question 
+            newState.byId[action.questionId] = action.question
 
+            return newState
         }
         case DELETE_QUESTION: {
             newState = { ...state }
