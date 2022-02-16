@@ -21,6 +21,8 @@ def question(id):
 
 # post question
 @question_routes.route('/', methods=['POST'])
+def post_question():
+    
 
 # edit question
 
