@@ -11,4 +11,12 @@ class Questions(db.Model):
 
     user = db.relationship("User", back_populates='questions')
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'question': self.question,
+            'details': self.details,
+            'user_id': self.user_id
+        }
+
 
