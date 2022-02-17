@@ -19,7 +19,8 @@ const QuestionDetails = () => {
 
     return (
         <div>
-            testing
+            <h2>{question?.question}</h2>
+            <p>{question?.details}</p>
         </div>
 
     )

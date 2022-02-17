@@ -20,7 +20,7 @@ def questions():
 @login_required
 def question(id):
     question = Question.query.get(id)
-    return question.to_dict()
+    return {'questions': [question.to_dict()]}
 
 
 # post question
