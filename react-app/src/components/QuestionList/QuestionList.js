@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getQuestions } from '../../store/questions';
+import QuestionForm from '../QuestionForm/QuestionForm';
 
 function QuestionList() {
     const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function QuestionList() {
 
     return (
         <>
+            <QuestionForm />
             <div>
                 {questionList.map(question => (
                     <NavLink key={question.question} to={`/questions/${question.id}`}>

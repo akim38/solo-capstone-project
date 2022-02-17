@@ -49,9 +49,6 @@ function App() {
         <ProtectedRoute path='/questions' exact={true} >
           <QuestionList />
         </ProtectedRoute>
-        <ProtectedRoute path='/questions/new' exact={true} >
-          <QuestionForm />
-        </ProtectedRoute>
         <ProtectedRoute path='/questions/:questionId' exact={true} >
           <QuestionDetails />
         </ProtectedRoute>
