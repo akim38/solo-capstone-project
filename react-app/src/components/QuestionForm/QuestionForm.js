@@ -1,10 +1,15 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { createQuestion } from "../../store/questions";
 
 
 const QuestionForm = () => {
-
+    const dispatch = useDispatch();
+    const history = useHistory();
     const [question, setQuestion] = useState('');
     const [details, setDetails] = useState('');
+    const [errors, setErrors] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -13,17 +18,38 @@ const QuestionForm = () => {
 
     const handleCancelClick = (e) => {
         e.preventDefault();
-        console.log('handle cancel')
+        const payload = {
+            question,
+            details
+        };
+
+        const newQuestion = await dispatch(createQuestion(payload))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) return setErrors(data.errors)
+            })
+
+            if (newQuestion) {
+                history.push(`/questions/`)
+            }
     }
 
 
     return (
         <>
+            {errors.length > 0 && (
+                <div>
+                    The following errors were found:
+                    <ul>
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul>
+                </div>
+            )}
             <form onSubmit={handleSubmit}>
                 <label htmlFor="question"> What would you like to ask?:
                     <input
                         type="text"
-                        placeholder="What's your question?"
+                        placeholder="Start your question with 'What', 'How', 'Why', etc. "
                         id='question'
                         value={question}
                         onChange={e => setQuestion(e.target.value)}
