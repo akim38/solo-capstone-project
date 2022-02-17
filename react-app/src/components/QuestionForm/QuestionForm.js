@@ -11,13 +11,9 @@ const QuestionForm = () => {
     const [details, setDetails] = useState('');
     const [errors, setErrors] = useState([]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('handle submission')
-    };
-
-    const handleCancelClick = (e) => {
-        e.preventDefault();
         const payload = {
             question,
             details
@@ -32,6 +28,11 @@ const QuestionForm = () => {
             if (newQuestion) {
                 history.push(`/questions/`)
             }
+    };
+
+    const handleCancelClick = (e) => {
+        e.preventDefault();
+        console.log('handle cancel')
     }
 
 
