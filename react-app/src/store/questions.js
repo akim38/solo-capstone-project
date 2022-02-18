@@ -55,8 +55,8 @@ export const createQuestion = (payload) => async dispatch => {
     }
 };
 
-export const editQuestion = (payload) => async dispatch => {
-    const res = await fetch(`/api/questions/`, {
+export const editQuestion = (questionId, payload) => async dispatch => {
+    const res = await fetch(`/api/questions/${questionId}/`, {
         method: "PUT",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(payload)

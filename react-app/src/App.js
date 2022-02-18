@@ -9,6 +9,8 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import QuestionList from './components/QuestionList/QuestionList';
+import QuestionDetails from './components/QuestionDetails/QuestionDetails';
+import StyleGuide from './components/StyleGuide/StyleGuide';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -32,6 +34,9 @@ function App() {
         <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
+        <Route path='/style' exact={true}>
+          <StyleGuide />
+        </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
@@ -47,6 +52,12 @@ function App() {
         <ProtectedRoute path='/questions' exact={true} >
           <QuestionList />
         </ProtectedRoute>
+        <ProtectedRoute path='/questions/:questionId' exact={true} >
+          <QuestionDetails />
+        </ProtectedRoute>
+        <Route>
+            <h3>404: Page Not Found</h3>
+        </Route>
       </Switch>
     </BrowserRouter>
   );
