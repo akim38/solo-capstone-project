@@ -12,8 +12,8 @@ const QuestionForm = ({ setShowModal }) => {
     const [errors, setErrors] = useState([]);
 
     const handleSubmit = async (e) => {
-        // e.preventDefault();
-        console.log('handle submission')
+        e.preventDefault();
+        // console.log('handle submission')
         const payload = {
             question,
             details
@@ -22,6 +22,7 @@ const QuestionForm = ({ setShowModal }) => {
         const newQuestion = await dispatch(createQuestion(payload))
             .catch(async (res) => {
                 const data = await res.json();
+                console.log(`DATATATATATATATATA`, data)
                 if (data && data.errors) return setErrors(data.errors)
             })
 

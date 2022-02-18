@@ -52,6 +52,13 @@ export const createQuestion = (payload) => async dispatch => {
         const newQuestion = await res.json();
         dispatch(addQuestion(newQuestion));
         return newQuestion;
+    } else if (res.status < 500) {
+        const data = await res.json();
+        if (data.errors) {
+          return data.errors;
+        }
+    } else {
+        return ['An error occurred. Please try again.']
     }
 };
 

@@ -24,7 +24,7 @@ def question(id):
 
     question_info = question.to_dict()
     question_info['username'] = username
-    
+
     return {'questions': [question_info]}
 
 
