@@ -18,10 +18,12 @@ const QuestionList = () => {
     return (
         <>
             <QuestionFormModal />
-            <div>
+            <div className='question-list'>
                 {questionList.map(question => (
                     <NavLink key={question.question} to={`/questions/${question.id}`}>
-                        <h3>{question.question}</h3>
+                        <div className='question-block'>
+                            <h3>{question.question}</h3>
+                        </div>
                     </NavLink>
                 ))}
             </div>
