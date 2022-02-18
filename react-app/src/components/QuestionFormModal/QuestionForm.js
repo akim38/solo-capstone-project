@@ -12,7 +12,7 @@ const QuestionForm = ({ setShowModal }) => {
     const [errors, setErrors] = useState([]);
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         console.log('handle submission')
         const payload = {
             question,
