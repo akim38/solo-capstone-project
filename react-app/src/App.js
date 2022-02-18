@@ -10,7 +10,6 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import QuestionList from './components/QuestionList/QuestionList';
 import QuestionDetails from './components/QuestionDetails/QuestionDetails';
-import QuestionForm from './components/QuestionForm/QuestionForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -52,6 +51,9 @@ function App() {
         <ProtectedRoute path='/questions/:questionId' exact={true} >
           <QuestionDetails />
         </ProtectedRoute>
+        <Route>
+            <h3>404: Page Not Found</h3>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

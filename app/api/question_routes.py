@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from app.api.auth_routes import validation_errors_to_error_messages
-from app.models import db, Question
+from app.models import db, Question, User
 from app.forms import QuestionForm
 from flask_login import current_user, login_required
 
@@ -20,7 +20,12 @@ def questions():
 @login_required
 def question(id):
     question = Question.query.get(id)
-    return {'questions': [question.to_dict()]}
+    username = question.user.username
+
+    question_info = question.to_dict()
+    question_info['username'] = username
+    
+    return {'questions': [question_info]}
 
 
 # post question

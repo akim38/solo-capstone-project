@@ -20,6 +20,7 @@ const QuestionDetails = () => {
     return (
         <div>
             <h2>{question?.question}</h2>
+            <p>Asked by {question?.username}</p>
             <p>{question?.details}</p>
         </div>
 
