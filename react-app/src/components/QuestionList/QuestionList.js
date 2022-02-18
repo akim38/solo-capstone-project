@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getQuestions } from '../../store/questions';
-import QuestionForm from '../QuestionForm/QuestionForm';
+import QuestionFormModal from '../QuestionFormModal';
 
-function QuestionList() {
+const QuestionList = () => {
     const dispatch = useDispatch();
     const questions = useSelector(state => state.questions.byId);
     console.log(questions)
@@ -15,10 +15,9 @@ function QuestionList() {
         dispatch(getQuestions());
     }, [dispatch])
 
-
     return (
         <>
-            <QuestionForm />
+            <QuestionFormModal />
             <div>
                 {questionList.map(question => (
                     <NavLink key={question.question} to={`/questions/${question.id}`}>

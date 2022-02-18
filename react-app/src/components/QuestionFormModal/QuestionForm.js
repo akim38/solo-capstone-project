@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { createQuestion } from "../../store/questions";
 
 
-const QuestionForm = () => {
+const QuestionForm = ({ setShowModal }) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const [question, setQuestion] = useState('');
@@ -26,13 +26,14 @@ const QuestionForm = () => {
             })
 
             if (newQuestion) {
+                setShowModal(false);
                 history.push(`/questions/`)
             }
     };
 
     const handleCancelClick = (e) => {
         e.preventDefault();
-        console.log('handle cancel')
+        setShowModal(false);
     }
 
 
