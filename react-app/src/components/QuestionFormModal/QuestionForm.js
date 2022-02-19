@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { createQuestion } from "../../store/questions";
+import { createQuestion, getQuestions } from "../../store/questions";
 
 
 const QuestionForm = ({ setShowModal }) => {
@@ -10,6 +10,10 @@ const QuestionForm = ({ setShowModal }) => {
     const [question, setQuestion] = useState('');
     const [details, setDetails] = useState('');
     const [errors, setErrors] = useState([]);
+
+    // useEffect(() => {
+    //     dispatch(getQuestions());
+    // }, [dispatch])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,7 +28,7 @@ const QuestionForm = ({ setShowModal }) => {
             setErrors(data.errors)
         } else {
             setShowModal(false);
-            history.push(`/questions/`)
+            history.push(`/questions/${data.id}`)
         }
     };
 
