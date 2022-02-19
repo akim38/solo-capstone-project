@@ -2,6 +2,8 @@ import { useState } from "react"
 import { Modal } from "../../context/Modal";
 import QuestionForm from "./QuestionForm";
 
+import './QuestionFormModal.css'
+
 
 const QuestionFormModal = () => {
     const [showModal, setShowModal] = useState(false);
