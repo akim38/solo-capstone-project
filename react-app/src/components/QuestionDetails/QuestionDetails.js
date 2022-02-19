@@ -29,7 +29,7 @@ const QuestionDetails = () => {
             <h2>{question?.question}</h2>
             <p>Asked by {question?.username}</p>
             <p>{question?.details}</p>
-            {sessionUser.id === question.user_id &&
+            {sessionUser.id === question?.user_id &&
                 <>
                     <QuestionEditFormModal />
                     <button type="submit" className="delete-question-button" onClick={deleteQuestion}>Delete</button>
