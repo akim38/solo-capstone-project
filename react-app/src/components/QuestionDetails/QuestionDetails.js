@@ -11,6 +11,7 @@ const QuestionDetails = () => {
 
     const dispatch = useDispatch();
     const question = useSelector(state => state.questions.byId[questionId])
+    const sessionUser = useSelector(state => state.session.user)
 
     useEffect(() => {
         dispatch(getSingleQuestion(questionId));
@@ -28,8 +29,12 @@ const QuestionDetails = () => {
             <h2>{question?.question}</h2>
             <p>Asked by {question?.username}</p>
             <p>{question?.details}</p>
-            <QuestionEditFormModal />
-            <button type="submit" className="delete-question-button" onClick={deleteQuestion}>Delete</button>
+            {sessionUser.id === question.user_id &&
+                <>
+                    <QuestionEditFormModal />
+                    <button type="submit" className="delete-question-button" onClick={deleteQuestion}>Delete</button>
+                </>
+            }
         </div>
 
     )

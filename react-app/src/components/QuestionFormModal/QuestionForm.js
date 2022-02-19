@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { createQuestion } from "../../store/questions";
+import { createQuestion, getQuestions } from "../../store/questions";
 
 
 const QuestionForm = ({ setShowModal }) => {
@@ -11,24 +11,25 @@ const QuestionForm = ({ setShowModal }) => {
     const [details, setDetails] = useState('');
     const [errors, setErrors] = useState([]);
 
+    // useEffect(() => {
+    //     dispatch(getQuestions());
+    // }, [dispatch])
+
     const handleSubmit = async (e) => {
-        // e.preventDefault();
-        console.log('handle submission')
+        e.preventDefault();
+        // console.log('handle submission')
         const payload = {
             question,
             details
         };
 
-        const newQuestion = await dispatch(createQuestion(payload))
-            .catch(async (res) => {
-                const data = await res.json();
-                if (data && data.errors) return setErrors(data.errors)
-            })
-
-            if (newQuestion) {
-                setShowModal(false);
-                history.push(`/questions/`)
-            }
+        const data = await dispatch(createQuestion(payload))
+        if (data.errors) {
+            setErrors(data.errors)
+        } else {
+            setShowModal(false);
+            history.push(`/questions/${data.id}`)
+        }
     };
 
     const handleCancelClick = (e) => {
