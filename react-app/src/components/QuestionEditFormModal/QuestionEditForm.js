@@ -24,15 +24,15 @@ const QuestionEditForm = ({ setShowModal }) => {
         };
 
         const editedQuestion = await dispatch(editQuestion(questionId, payload))
-            .catch(async (res) => {
-                const data = await res.json();
-                if (data && data.errors) return setErrors(data.errors)
-            })
+            // .catch(async (res) => {
+            //     const data = await res.json();
+            //     if (data && data.errors) return setErrors(data.errors)
+            // })
 
-            if (editedQuestion) {
-                setShowModal(false);
-                history.push(`/questions/`)
-            }
+            // if (editedQuestion) {
+            //     setShowModal(false);
+            //     history.push(`/questions/`)
+            // }
     };
 
     const handleCancelClick = (e) => {
