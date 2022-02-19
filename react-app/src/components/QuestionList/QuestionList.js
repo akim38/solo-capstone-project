@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { getQuestions } from '../../store/questions';
 import QuestionFormModal from '../QuestionFormModal';
 
+import './QuestionList.css'
+
 const QuestionList = () => {
     const dispatch = useDispatch();
     const questions = useSelector(state => state.questions.byId);
@@ -16,18 +18,18 @@ const QuestionList = () => {
     }, [dispatch])
 
     return (
-        <>
+        <div className='question-list'>
             <QuestionFormModal />
-            <div className='question-list'>
-                {questionList.map(question => (
+            {questionList.map(question => (
+                <div className='question-box'>
                     <NavLink key={question.question} to={`/questions/${question.id}`}>
                         <div className='question-block'>
                             <h3>{question.question}</h3>
                         </div>
                     </NavLink>
-                ))}
-            </div>
-        </>
+                </div>
+            ))}
+        </div>
     )
 };
 

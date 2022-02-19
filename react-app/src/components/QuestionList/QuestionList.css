@@ -1,0 +1,14 @@
+.question-list {
+    width: 55%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+}
+
+
+.question-box {
+    border: 1px solid var(--accent-color-1);
+    padding-left: 10px;
+    background-color: white;
+    margin-bottom: 5px;
+}

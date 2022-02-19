@@ -47,9 +47,6 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
-        </ProtectedRoute>
-        <ProtectedRoute path='/questions' exact={true} >
           <QuestionList />
         </ProtectedRoute>
         <ProtectedRoute path='/questions/:questionId' exact={true} >
