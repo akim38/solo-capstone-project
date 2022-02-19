@@ -19,17 +19,13 @@ const QuestionForm = ({ setShowModal }) => {
             details
         };
 
-        const newQuestion = await dispatch(createQuestion(payload))
-            .catch(async (res) => {
-                const data = await res.json();
-                console.log(`DATATATATATATATATA`, data)
-                if (data && data.errors) return setErrors(data.errors)
-            })
-
-            if (newQuestion) {
-                setShowModal(false);
-                history.push(`/questions/`)
-            }
+        const data = await dispatch(createQuestion(payload))
+        if (data.errors) {
+            setErrors(data.errors)
+        } else {
+            setShowModal(false);
+            history.push(`/questions/`)
+        }
     };
 
     const handleCancelClick = (e) => {
