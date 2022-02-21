@@ -29,22 +29,22 @@ def answer(id):
     return {'answers': [answer_info]}
 
 
-#post answer on question
-@answer_routes.route('/', methods=['POST'])
-@login_required
-def post_answer(question_id):
-    form = AnswerForm()
-    form['csrf_token'.data] = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        new_answer = Answer(
-            answer=form.data['answer'],
-            user_id=current_user.id,
-            question_id=question_id
-        )
-        db.session.add(new_answer)
-        db.session.commit()
-        return new_answer.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+# #post answer on question
+# @answer_routes.route('/', methods=['POST'])
+# @login_required
+# def post_answer(question_id):
+#     form = AnswerForm()
+#     form['csrf_token'.data] = request.cookies['csrf_token']
+#     if form.validate_on_submit():
+#         new_answer = Answer(
+#             answer=form.data['answer'],
+#             user_id=current_user.id,
+#             question_id=question_id
+#         )
+#         db.session.add(new_answer)
+#         db.session.commit()
+#         return new_answer.to_dict()
+#     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 #edit answer
@@ -53,6 +53,7 @@ def post_answer(question_id):
 def edit_answer(id):
     answer = Answer.query.get(id)
     form = AnswerForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         answer.answer = form.data['answer']
 

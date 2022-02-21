@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from app.api.auth_routes import validation_errors_to_error_messages
-from app.models import db, Question, User
-from app.forms import QuestionForm
+from app.models import db, Question, User, Answer
+from app.forms import QuestionForm, AnswerForm
 from flask_login import current_user, login_required
 
 
@@ -68,3 +68,20 @@ def delete_question(id):
     db.session.delete(question)
     db.session.commit()
     return {"message": "Question deleted."}
+
+#post answer on question
+@question_routes.route('/<int:id>/answers/', methods=['POST'])
+@login_required
+def post_answer(id):
+    form = AnswerForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        new_answer = Answer(
+            answer=form.data['answer'],
+            user_id=current_user.id,
+            question_id=id
+        )
+        db.session.add(new_answer)
+        db.session.commit()
+        return new_answer.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
