@@ -12,7 +12,9 @@
 
 body {
     font-family: var(--body-font);
-    background-color: var(--main-color);
+    /* background-color: var(--main-color); */
+    background: rgb(173,216,230);
+    background: linear-gradient(0deg, rgba(173,216,230,1) 0%, rgba(161,209,155,1) 100%);
 }
 
 a {

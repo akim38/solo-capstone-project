@@ -8,7 +8,7 @@ const QuestionEditFormModal = () => {
 
     return (
         <>
-            <button className="create-question-modal" onClick={() => setShowModal(true)}>
+            <button className="edit-question-modal" onClick={() => setShowModal(true)}>
                 Edit
             </button>
             {showModal && (
@@ -21,4 +21,4 @@ const QuestionEditFormModal = () => {
 
 }
 
-export default QuestionEditFormModal; 
+export default QuestionEditFormModal;
