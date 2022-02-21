@@ -67,8 +67,10 @@ const QuestionForm = ({ setShowModal }) => {
                         onChange={e => setDetails(e.target.value)}
                     />
                 </label>
-                <button type="submit">Create New Question</button>
-                <button type="button" onClick={handleCancelClick}>Cancel</button>
+                <div className="button-container">
+                    <button type="submit">Create New Question</button>
+                    <button type="button" onClick={handleCancelClick}>Cancel</button>
+                </div>
             </form>
         </div>
     )

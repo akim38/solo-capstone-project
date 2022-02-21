@@ -11,5 +11,7 @@
     border-radius: 7px;
     padding-left: 10px;
     background-color: rgba(255, 255, 255, .5);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: var(--h4-size);
+    box-shadow: 5px 5px 5px var(--accent-color-3);
 }
