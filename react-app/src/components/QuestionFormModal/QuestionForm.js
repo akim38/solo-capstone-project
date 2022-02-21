@@ -39,7 +39,7 @@ const QuestionForm = ({ setShowModal }) => {
 
 
     return (
-        <>
+        <div className="question-form">
             {errors.length > 0 && (
                 <div>
                     The following errors were found:
@@ -59,7 +59,7 @@ const QuestionForm = ({ setShowModal }) => {
                     />
                 </label>
                 <label htmlFor="details"> Details:
-                    <input
+                    <textarea
                         type="text"
                         placeholder="Add some details or context if you would like!"
                         id='details'
@@ -70,7 +70,7 @@ const QuestionForm = ({ setShowModal }) => {
                 <button type="submit">Create New Question</button>
                 <button type="button" onClick={handleCancelClick}>Cancel</button>
             </form>
-        </>
+        </div>
     )
 };
 

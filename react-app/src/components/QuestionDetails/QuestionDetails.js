@@ -21,7 +21,7 @@ const QuestionDetails = () => {
         e.preventDefault()
 
         await dispatch(removeQuestion(questionId))
-            .then((res) => history.push('/questions/'))
+            .then((res) => history.push('/'))
     }
 
     return (

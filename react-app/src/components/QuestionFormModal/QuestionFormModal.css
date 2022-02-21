@@ -7,3 +7,36 @@
     padding: 15px 5px;
     font-size: 20px;
 }
+
+#modal-content {
+    border: 1.5px solid var(--accent-color-1);
+    border-radius: 7px;
+    width: 500px;
+    min-height: 500px;
+    max-height: auto;
+    background-color: rgba(255, 255, 255, 1);
+    /* display: flex;
+    flex-direction: column; */
+}
+
+#modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.question-form input {
+    width: 450px;
+    display: flex;
+    align-items: center;
+    font-size: var(--h5-size);
+}
+
+.question-form textarea {
+    width: 450px;
+    display: flex;
+    align-items: center;
+    font-size: var(--h5-size);
+}

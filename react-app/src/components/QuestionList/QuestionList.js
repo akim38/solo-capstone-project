@@ -24,7 +24,7 @@ const QuestionList = () => {
                 <div className='question-box'>
                     <NavLink key={question.question} to={`/questions/${question.id}`}>
                         <div className='question-block'>
-                            <h3>{question.question}</h3>
+                            <h4>{question.question}</h4>
                         </div>
                     </NavLink>
                 </div>
