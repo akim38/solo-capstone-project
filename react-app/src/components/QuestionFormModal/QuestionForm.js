@@ -39,9 +39,9 @@ const QuestionForm = ({ setShowModal }) => {
 
 
     return (
-        <>
+        <div className="question-form">
             {errors.length > 0 && (
-                <div>
+                <div className="errors">
                     The following errors were found:
                     <ul>
                         {errors.map(error => <li key={error}>{error}</li>)}
@@ -59,7 +59,7 @@ const QuestionForm = ({ setShowModal }) => {
                     />
                 </label>
                 <label htmlFor="details"> Details:
-                    <input
+                    <textarea
                         type="text"
                         placeholder="Add some details or context if you would like!"
                         id='details'
@@ -67,10 +67,12 @@ const QuestionForm = ({ setShowModal }) => {
                         onChange={e => setDetails(e.target.value)}
                     />
                 </label>
-                <button type="submit">Create New Question</button>
-                <button type="button" onClick={handleCancelClick}>Cancel</button>
+                <div className="button-container">
+                    <button type="submit">Create New Question</button>
+                    <button type="button" onClick={handleCancelClick}>Cancel</button>
+                </div>
             </form>
-        </>
+        </div>
     )
 };
 

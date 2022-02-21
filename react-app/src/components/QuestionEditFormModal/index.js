@@ -2,14 +2,15 @@ import { useState } from "react"
 import { Modal } from "../../context/Modal";
 import QuestionEditForm from "./QuestionEditForm";
 
+import './QuestionEditFormModal.css'
 
 const QuestionEditFormModal = () => {
     const [showModal, setShowModal] = useState(false);
 
     return (
         <>
-            <button className="create-question-modal" onClick={() => setShowModal(true)}>
-                Edit
+            <button className="edit-question-modal" onClick={() => setShowModal(true)}>
+            <ion-icon name="pencil-outline"></ion-icon>
             </button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
@@ -21,4 +22,4 @@ const QuestionEditFormModal = () => {
 
 }
 
-export default QuestionEditFormModal; 
+export default QuestionEditFormModal;
