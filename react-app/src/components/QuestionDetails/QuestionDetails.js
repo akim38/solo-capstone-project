@@ -30,7 +30,7 @@ const QuestionDetails = () => {
             <div className="question-detail-box">
                 <h2>{question?.question}</h2>
                 {sessionUser.id === question?.user_id &&
-                    <div className="button-container">
+                    <div className="detail-button-container">
                         <QuestionEditFormModal />
                         <button type="submit" className="delete-question-button" onClick={deleteQuestion}>
                         <ion-icon name="trash-bin-outline"></ion-icon>
