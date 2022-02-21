@@ -18,12 +18,6 @@
 
 body {
     font-family: var(--body-font);
-    /* background: rgb(173,216,230);
-    background: linear-gradient(0deg, rgba(173,216,230,1) 0%, rgba(161,209,155,1) 100%); */
-    /* background-color: #FAACA8;
-    background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%); */
-    /* background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
-    /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 
 }

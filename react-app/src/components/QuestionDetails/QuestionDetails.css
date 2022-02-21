@@ -1,0 +1,29 @@
+.question-page {
+    display: flex;
+    justify-content: center;
+}
+
+.question-detail-box {
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    border: 1.5px solid var(--accent-color-1);
+    border-radius: 7px;
+    padding: 20px 80px 20px 50px;
+    box-shadow: 5px 5px 5px var(--accent-color-3);
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: end;
+}
+
+.author {
+    font-style: italic;
+    font-size: 15px;
+}
+
+.details {
+    font-size: var(--h5-size);
+}

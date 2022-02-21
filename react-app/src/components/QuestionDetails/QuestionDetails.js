@@ -4,6 +4,7 @@ import { useHistory, useParams } from "react-router-dom"
 import { getSingleQuestion, removeQuestion } from "../../store/questions";
 import QuestionEditFormModal from "../QuestionEditFormModal";
 
+import './QuestionDetails.css'
 
 const QuestionDetails = () => {
     const { questionId } = useParams();
@@ -25,16 +26,20 @@ const QuestionDetails = () => {
     }
 
     return (
-        <div>
-            <h2>{question?.question}</h2>
-            <p>Asked by {question?.username}</p>
-            <p>{question?.details}</p>
-            {sessionUser.id === question?.user_id &&
-                <>
-                    <QuestionEditFormModal />
-                    <button type="submit" className="delete-question-button" onClick={deleteQuestion}>Delete</button>
-                </>
-            }
+        <div className="question-page">
+            <div className="question-detail-box">
+                <h2>{question?.question}</h2>
+                {sessionUser.id === question?.user_id &&
+                    <div className="button-container">
+                        <QuestionEditFormModal />
+                        <button type="submit" className="delete-question-button" onClick={deleteQuestion}>
+                        <ion-icon name="trash-bin-outline"></ion-icon>
+                        </button>
+                    </div>
+                }
+                <p className="author">Asked by {question?.username}</p>
+                <p className="details">{question?.details}</p>
+            </div>
         </div>
 
     )

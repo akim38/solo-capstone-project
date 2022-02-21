@@ -10,7 +10,7 @@ const QuestionEditFormModal = () => {
     return (
         <>
             <button className="edit-question-modal" onClick={() => setShowModal(true)}>
-                Edit
+            <ion-icon name="pencil-outline"></ion-icon>
             </button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
