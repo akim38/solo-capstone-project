@@ -41,7 +41,7 @@ const QuestionForm = ({ setShowModal }) => {
     return (
         <div className="question-form">
             {errors.length > 0 && (
-                <div>
+                <div className="errors">
                     The following errors were found:
                     <ul>
                         {errors.map(error => <li key={error}>{error}</li>)}
