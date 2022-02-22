@@ -1,23 +1,39 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
+import { createAnswer } from "../../store/answers";
 
 
 const AnswerForm = () => {
+    const { questionId } = useParams()
+
     const dispatch = useDispatch();
     const history = useHistory();
     const [answer, setAnswer] = useState('');
     const [errors, setErrors] = useState([]);
     const [showForm, setShowForm] = useState(false);
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('handle submit')
+
+        const payload = {
+            answer
+        }
+
+        const data = await dispatch(createAnswer(payload, questionId))
+        if (data.errors) {
+            setErrors(data.errors)
+        } else {
+            setShowForm(false);
+        }
     };
 
     const handleCancelClick = (e) => {
         e.preventDefault();
-        setShowForm(false)
+
+        setAnswer('');
+        setShowForm(false);
     };
 
     return (
