@@ -58,7 +58,12 @@ def edit_answer(id):
         answer.answer = form.data['answer']
 
         db.session.commit()
-        return answer.to_dict()
+
+        username = answer.user.username
+        answer_info = answer.to_dict()
+        answer_info['username'] = username
+
+        return answer_info
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 #delete answer

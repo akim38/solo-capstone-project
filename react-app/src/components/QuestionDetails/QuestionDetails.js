@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom"
 import { getSingleQuestion, removeQuestion } from "../../store/questions";
+import AnswerForm from "../AnswerForm/AnswerForm";
+import Answers from "../Answers/Answers";
 import QuestionEditFormModal from "../QuestionEditFormModal";
 
 import './QuestionDetails.css'
@@ -39,7 +41,9 @@ const QuestionDetails = () => {
                 }
                 <p className="author">Asked by {question?.username}</p>
                 <p className="details">{question?.details}</p>
+                <AnswerForm />
             </div>
+            <Answers />
         </div>
 
     )

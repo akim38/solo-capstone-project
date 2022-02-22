@@ -21,7 +21,7 @@ const QuestionList = () => {
         <div className='question-list'>
             <QuestionFormModal />
             {questionList.map(question => (
-                <div className='question-box'>
+                <div className='question-box' key={question.question}>
                     <NavLink key={question.question} to={`/questions/${question.id}`}>
                         <div className='question-block'>
                             <p>{question.question}</p>
