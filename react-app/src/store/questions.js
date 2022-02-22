@@ -108,9 +108,6 @@ const questionReducer = (state = initialState, action) => {
         case ADD_QUESTION: {
             newState = { ...state }
 
-            console.log(action, `ACTIONSFASFJAOSD`)
-            console.log('testing testing >>>>>>')
-
             newState.byId[action.question.id] = action.question
 
             return newState
