@@ -28,7 +28,7 @@ const QuestionForm = ({ setShowModal }) => {
             setErrors(data.errors)
         } else {
             setShowModal(false);
-            history.push(`/questions/${data.id}`)
+            dispatch(getQuestions());
         }
     };
 

@@ -46,7 +46,7 @@ const AnswerEditForm = ({ answerId }) => {
     return (
         <div className="answer-edit-area">
             <button className="show-answer-edit" onClick={() => setShowForm(!showForm)}>
-                Edit
+                <ion-icon name="pencil-outline"></ion-icon>
             </button>
             {showForm && (
                 <div className="answer-edit">
