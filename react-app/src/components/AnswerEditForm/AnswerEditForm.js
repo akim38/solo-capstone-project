@@ -1,15 +1,18 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { createAnswer, getQuestionAnswers } from "../../store/answers";
+import { createAnswer, editAnswer, getQuestionAnswers } from "../../store/answers";
 
 
-const AnswerForm = () => {
+const AnswerEditForm = ({ answerId }) => {
     const { questionId } = useParams()
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const [answer, setAnswer] = useState('');
+
+    const oldAnswer = useSelector(state => state.answers.byId[answerId])
+
+    const [answer, setAnswer] = useState(oldAnswer?.answer);
     const [errors, setErrors] = useState([]);
     const [showForm, setShowForm] = useState(false);
 
@@ -21,31 +24,32 @@ const AnswerForm = () => {
             answer
         }
 
-        const data = await dispatch(createAnswer(payload, questionId))
-        if (data.errors) {
-            setErrors(data.errors)
-        } else {
-            setShowForm(false);
-            getQuestionAnswers(questionId);
-            history.push(`/questions/${questionId}`)
-            // history.go()
-        }
+        const data = await dispatch(editAnswer(payload, answerId))
+        setShowForm(false);
+        history.push(`/questions/${questionId}`)
+        // if (data.errors) {
+        //     setErrors(data.errors)
+        // } else {
+        //     setShowForm(false);
+        //     getQuestionAnswers(questionId);
+        //     // history.push(`/questions/${questionId}`)
+        //     history.go()
+        // }
     };
 
     const handleCancelClick = (e) => {
         e.preventDefault();
 
-        setAnswer('');
         setShowForm(false);
     };
 
     return (
-        <div className="answer-form-area">
-            <button className="show-answer-form" onClick={() => setShowForm(!showForm)}>
-                Answer
+        <div className="answer-edit-area">
+            <button className="show-answer-edit" onClick={() => setShowForm(!showForm)}>
+                Edit
             </button>
             {showForm && (
-                <div className="answer-form">
+                <div className="answer-edit">
                     {errors.length > 0 && (
                         <div className="errors">
                             The following errors were found:
@@ -58,7 +62,6 @@ const AnswerForm = () => {
                         <label htmlFor="answer">
                             <textarea
                                 type="text"
-                                placeholder="Write your answer"
                                 id='answer'
                                 value={answer}
                                 onChange={e => setAnswer(e.target.value)}
@@ -75,4 +78,4 @@ const AnswerForm = () => {
     )
 };
 
-export default AnswerForm;
+export default AnswerEditForm;
