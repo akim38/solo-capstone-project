@@ -69,6 +69,15 @@ def delete_question(id):
     db.session.commit()
     return {"message": "Question deleted."}
 
+
+#get all answers on specific question
+@question_routes.route('/<int:id>/answers/')
+@login_required
+def get_answer(id):
+    answers = Answer.query.filter(Answer.question_id == id).all()
+    return {'answers': [answer.to_dict() for answer in answers]}
+
+
 #post answer on question
 @question_routes.route('/<int:id>/answers/', methods=['POST'])
 @login_required
