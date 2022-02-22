@@ -8,7 +8,6 @@ const AnswerForm = () => {
     const { questionId } = useParams()
 
     const dispatch = useDispatch();
-    const history = useHistory();
     const [answer, setAnswer] = useState('');
     const [errors, setErrors] = useState([]);
     const [showForm, setShowForm] = useState(false);
@@ -26,9 +25,8 @@ const AnswerForm = () => {
             setErrors(data.errors)
         } else {
             setShowForm(false);
-            getQuestionAnswers(questionId);
-            history.push(`/questions/${questionId}`)
-            // history.go()
+            dispatch(getQuestionAnswers(questionId));
+            setAnswer(''); 
         }
     };
 
