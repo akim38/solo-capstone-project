@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { editQuestion } from "../../store/questions";
 
 
 const QuestionEditForm = ({ setShowModal }) => {
     const { questionId } = useParams();
     const dispatch = useDispatch();
-    const history = useHistory();
+    // const history = useHistory();
 
     const oldQuestion = useSelector(state => state.questions.byId[questionId])
 

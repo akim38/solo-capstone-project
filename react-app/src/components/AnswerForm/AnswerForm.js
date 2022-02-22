@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { createAnswer } from "../../store/answers";
+import { createAnswer, getQuestionAnswers } from "../../store/answers";
 
 
 const AnswerForm = () => {
@@ -26,6 +26,9 @@ const AnswerForm = () => {
             setErrors(data.errors)
         } else {
             setShowForm(false);
+            getQuestionAnswers(questionId);
+            // history.push(`/questions/${questionId}`)
+            history.go()
         }
     };
 
