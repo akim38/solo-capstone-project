@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar';
@@ -11,10 +11,12 @@ import { authenticate } from './store/session';
 import QuestionList from './components/QuestionList/QuestionList';
 import QuestionDetails from './components/QuestionDetails/QuestionDetails';
 import StyleGuide from './components/StyleGuide/StyleGuide';
+import SplashPage from './components/SplashPage/SplashPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+  const sessionUser = useSelector(state => state.session.user)
 
   useEffect(() => {
     (async() => {
@@ -29,10 +31,12 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      {sessionUser && (
+        <NavBar />
+      )}
       <Switch>
         <Route path='/login' exact={true}>
-          <LoginForm />
+          <SplashPage />
         </Route>
         <Route path='/style' exact={true}>
           <StyleGuide />
