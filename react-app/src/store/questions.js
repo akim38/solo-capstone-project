@@ -55,7 +55,6 @@ export const createQuestion = (payload) => async dispatch => {
     } else if (res.status < 500) {
         const data = await res.json();
         if (data.errors) {
-            console.log('LOOK HERE ERRORS?', data.errors)
           return {'errors': data.errors};
         }
     } else {
@@ -108,9 +107,6 @@ const questionReducer = (state = initialState, action) => {
         }
         case ADD_QUESTION: {
             newState = { ...state }
-
-            console.log(action, `ACTIONSFASFJAOSD`)
-            console.log('testing testing >>>>>>')
 
             newState.byId[action.question.id] = action.question
 
