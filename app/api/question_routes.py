@@ -74,8 +74,15 @@ def delete_question(id):
 @question_routes.route('/<int:id>/answers/')
 @login_required
 def get_answer(id):
-    answers = Answer.query.filter(Answer.question_id == id).all()
-    return {'answers': [answer.to_dict() for answer in answers]}
+    all_answers = Answer.query.filter(Answer.question_id == id).all()
+
+    answers = [answer.to_dict() for answer in all_answers]
+
+    for answer in answers:
+        user = User.query.filter(User.id == answer['user_id']).first()
+        answer['username'] = user.username
+
+    return {'answers': answers}
 
 
 #post answer on question

@@ -20,8 +20,8 @@ const Answers = () => {
     return (
         <div className="answers-box">
             {answerList.map(answer => (
-                <div>
-                    <h5>username</h5>
+                <div key={answer.answer}>
+                    <h5>{answer.username}</h5>
                     <p>{answer.answer}</p>
                 </div>
             ))}
