@@ -7,7 +7,7 @@
 
 
 .question-box {
-    border: 1.5px solid var(--accent-color-1);
+    border: 1px solid rgba(0, 0, 0, 0.226);
     border-radius: 7px;
     padding-left: 10px;
     background-color: rgba(255, 255, 255, .5);

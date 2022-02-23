@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { createAnswer, getQuestionAnswers } from "../../store/answers";
 
+import './AnswerForm.css'
 
 const AnswerForm = () => {
     const { questionId } = useParams()
@@ -26,7 +27,7 @@ const AnswerForm = () => {
         } else {
             setShowForm(false);
             dispatch(getQuestionAnswers(questionId));
-            setAnswer(''); 
+            setAnswer('');
         }
     };
 
@@ -40,6 +41,7 @@ const AnswerForm = () => {
     return (
         <div className="answer-form-area">
             <button className="show-answer-form" onClick={() => setShowForm(!showForm)}>
+                <ion-icon name="chatbubble-outline"></ion-icon>
                 Answer
             </button>
             {showForm && (
