@@ -16,10 +16,32 @@
     border: 0.8px solid rgba(0, 0, 0, 0.226);
     border-radius: 1px;
     display: flex;
-    /* justify-content: center; */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     align-self: center;
     height: 700px;
     width: 650px;
     background-color: white;
 }
 
+.title-area {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: end; */
+    align-items: center;
+    padding-top: 25px;
+}
+
+.auth-area {
+    display: flex;
+}
+
+.link-area {
+    background-color: var(--main-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px;
+    border: 0.8px solid rgba(0, 0, 0, 0.226);
+}
