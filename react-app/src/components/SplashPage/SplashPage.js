@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import LoginForm from "../auth/LoginForm";
 import SignUpForm from "../auth/SignUpForm";
+import SignUpFormModal from "../auth/SignUpFormModal";
 
 import './SplashPage.css';
 
@@ -14,7 +15,7 @@ const SplashPage = () => {
                         <p className="intro">A place to ask questions and get answers!</p>
                     </div>
                     <div className="auth-area">
-                        <SignUpForm />
+                        <SignUpFormModal />
                         <LoginForm />
                     </div>
                     <div className="link-area">
