@@ -1,0 +1,56 @@
+#login-background {
+    background-image: url('./henry-co--odUkx8C2gg-unsplash\ \(1\).jpg');
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.login-area {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-box {
+    border: 0.8px solid rgba(0, 0, 0, 0.226);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    height: 700px;
+    width: 650px;
+    background-color: white;
+}
+
+.title-area {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: end; */
+    align-items: center;
+    padding-top: 25px;
+}
+
+.title {
+    color: rgb(200, 72, 72);
+}
+
+.intro {
+    font-weight: bold;
+}
+
+.auth-area {
+    display: flex;
+    align-items: center;
+}
+
+.link-area {
+    background-color: var(--main-color);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0px;
+    border: 0.8px solid rgba(0, 0, 0, 0.226);
+}
