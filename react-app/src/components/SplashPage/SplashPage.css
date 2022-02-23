@@ -1,0 +1,25 @@
+#login-background {
+    background-image: url('./henry-co--odUkx8C2gg-unsplash\ \(1\).jpg');
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.login-area {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-box {
+    border: 0.8px solid rgba(0, 0, 0, 0.226);
+    border-radius: 1px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 700px;
+    width: 650px;
+    background-color: white;
+}
+
