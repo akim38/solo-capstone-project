@@ -10,7 +10,7 @@ const SplashPage = () => {
             <div className="login-area">
                 <div className="form-box">
                     <div className="title-area">
-                        <h2 className="title">QueWhat</h2>
+                        <h1 className="title">QueWhat</h1>
                         <p className="intro">A place to ask questions and get answers!</p>
                     </div>
                     <div className="auth-area">

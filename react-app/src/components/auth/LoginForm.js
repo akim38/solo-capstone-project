@@ -35,44 +35,48 @@ const LoginForm = () => {
     if (data) {
       setErrors(data);
     }
-  }; 
+  };
 
   if (user) {
     return <Redirect to='/' />;
   }
 
   return (
-    <div className='login-form'>
-      <h4>Login</h4>
-      <form onSubmit={onLogin}>
-        <div>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
-        </div>
-        <div>
-          <label htmlFor='email'>Email</label>
-          <input
-            name='email'
-            type='text'
-            placeholder='Email'
-            value={email}
-            onChange={updateEmail}
-          />
-        </div>
-        <div>
-          <label htmlFor='password'>Password</label>
-          <input
-            name='password'
-            type='password'
-            placeholder='Password'
-            value={password}
-            onChange={updatePassword}
-          />
-          <button type='submit'>Login</button>
-          <button onClick={demoLogin}>Login As Demo User</button>
-        </div>
-      </form>
+    <div className='login-area'>
+      <div className='login-form'>
+        <h4>Login</h4>
+        <form onSubmit={onLogin}>
+          <div>
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
+          </div>
+          <div>
+            <label htmlFor='email'>Email</label>
+            <input
+              name='email'
+              type='text'
+              placeholder='Email'
+              value={email}
+              onChange={updateEmail}
+            />
+          </div>
+          <div>
+            <label htmlFor='password'>Password</label>
+            <input
+              name='password'
+              type='password'
+              placeholder='Password'
+              value={password}
+              onChange={updatePassword}
+            />
+          </div>
+          <div>
+            <button className='login-btn' type='submit'>Login</button>
+            <button className='demo-btn' onClick={demoLogin}>Login As Demo User</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

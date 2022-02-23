@@ -1,0 +1,35 @@
+.login-area {
+    border-left: 0.8px solid rgba(0, 0, 0, 0.226);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.login-form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form input {
+    width: 300px;
+    height: 45px;
+    padding-left: 10px;
+}
+
+.login-form button {
+    background-color: rgb(48, 144, 235);
+    color: white;
+    font-size: 16px;
+    padding: 8px 2px;
+    margin-top: 8px;
+    border: 0.8px solid rgba(0, 0, 0, 0.226);
+    border-radius: 20px;
+}
+
+.demo-btn {
+    margin-bottom: 25px;
+}

@@ -14,7 +14,7 @@
 
 .form-box {
     border: 0.8px solid rgba(0, 0, 0, 0.226);
-    border-radius: 1px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -31,6 +31,14 @@
     /* justify-content: end; */
     align-items: center;
     padding-top: 25px;
+}
+
+.title {
+    color: rgb(200, 72, 72);
+}
+
+.intro {
+    font-weight: bold;
 }
 
 .auth-area {
