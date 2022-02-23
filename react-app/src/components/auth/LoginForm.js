@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 
+import './LoginForm.css';
+
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
@@ -26,12 +28,22 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
+  const demoLogin = async (e) => {
+    e.preventDefault();
+
+    const data = await dispatch(login('demo@aa.io', 'password'));
+    if (data) {
+      setErrors(data);
+    }
+  }; 
+
   if (user) {
     return <Redirect to='/' />;
   }
 
   return (
     <div className='login-form'>
+      <h4>Login</h4>
       <form onSubmit={onLogin}>
         <div>
           {errors.map((error, ind) => (
@@ -58,6 +70,7 @@ const LoginForm = () => {
             onChange={updatePassword}
           />
           <button type='submit'>Login</button>
+          <button onClick={demoLogin}>Login As Demo User</button>
         </div>
       </form>
     </div>
