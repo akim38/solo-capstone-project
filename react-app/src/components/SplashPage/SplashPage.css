@@ -16,7 +16,7 @@
     border: 0.8px solid rgba(0, 0, 0, 0.226);
     border-radius: 1px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-self: center;
     height: 700px;
     width: 650px;
