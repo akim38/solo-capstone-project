@@ -43,6 +43,7 @@
 
 .auth-area {
     display: flex;
+    align-items: center;
 }
 
 .link-area {

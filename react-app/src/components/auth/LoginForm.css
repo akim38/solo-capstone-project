@@ -1,5 +1,6 @@
 .login-area {
     border-left: 0.8px solid rgba(0, 0, 0, 0.226);
+    padding-left: 40px;
 }
 
 .login-form {
@@ -28,6 +29,10 @@
     margin-top: 8px;
     border: 0.8px solid rgba(0, 0, 0, 0.226);
     border-radius: 20px;
+}
+
+.login-form button:hover {
+    background-color: rgb(104, 173, 238);
 }
 
 .demo-btn {
