@@ -1,13 +1,15 @@
 .question-page {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    margin-left: 250px;
 }
 
 .question-detail-box {
     display: flex;
     justify-content: end;
     flex-direction: column;
-    border: 1.5px solid var(--accent-color-1);
+    border: 1px solid rgba(0, 0, 0, 0.226);
     border-radius: 7px;
     padding: 20px 80px 20px 50px;
     box-shadow: 5px 5px 5px var(--accent-color-3);

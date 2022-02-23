@@ -1,7 +1,7 @@
 .create-question-modal {
     background-color: rgba(255, 255, 255, .5);
     margin-bottom: 5px;
-    border: 1.5px solid var(--accent-color-1);
+    border: 1px solid rgba(0, 0, 0, 0.226);
     border-radius: 7px;
     color: var(--accent-color-3);
     padding: 15px 5px;

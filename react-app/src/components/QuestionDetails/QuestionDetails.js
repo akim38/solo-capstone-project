@@ -43,7 +43,9 @@ const QuestionDetails = () => {
                 <p className="details">{question?.details}</p>
                 <AnswerForm />
             </div>
-            <Answers />
+            <div>
+                <Answers />
+            </div>
         </div>
 
     )

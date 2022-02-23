@@ -5,6 +5,8 @@ import { getQuestionAnswers } from "../../store/answers";
 import AnswerEditForm from "../AnswerEditForm/AnswerEditForm";
 import DeleteAnswer from "./DeleteAnswer";
 
+import './Answers.css'
+
 
 const Answers = () => {
     const { questionId } = useParams();
@@ -21,7 +23,7 @@ const Answers = () => {
     return (
         <div className="answers-box">
             {answerList.map(answer => (
-                <div key={answer.answer}>
+                <div className="answer-box" key={answer.answer}>
                     <h5>{answer.username}</h5>
                     <p>{answer.answer}</p>
                     {sessionUser.id === answer?.user_id && (
