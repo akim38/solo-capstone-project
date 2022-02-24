@@ -10,7 +10,7 @@ class Question(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
     user = db.relationship("User", back_populates='questions')
-    answers = db.relationship("Answer", back_populates='question')
+    answers = db.relationship("Answer", back_populates='question', cascade="all, delete")
 
     def to_dict(self):
         return {

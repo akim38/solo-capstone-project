@@ -42,9 +42,9 @@ function App() {
         <Route path='/style' exact={true}>
           <StyleGuide />
         </Route>
-        <Route path='/about' exact={true}>
+        <ProtectedRoute path='/about' exact={true}>
           <About />
-        </Route>
+        </ProtectedRoute>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
