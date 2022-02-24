@@ -85,6 +85,13 @@ export const editAnswer = (payload, answerId) => async dispatch => {
         const edittedAnswer = await res.json();
         dispatch(addAnswer(edittedAnswer));
         return edittedAnswer;
+    } else if (res.status < 500) {
+        const data = await res.json();
+        if (data.errors) {
+          return {'errors': data.errors};
+        }
+    } else {
+        return ['An error occurred. Please try again.']
     }
 };
 
@@ -129,7 +136,7 @@ const answerReducer = (state = initialState, action) => {
 
             delete newState.byId[action.answerId]
 
-            return newState; 
+            return newState;
         }
         default:
             return state;
