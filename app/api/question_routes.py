@@ -52,12 +52,15 @@ def post_question():
 def edit_question(id):
     question = Question.query.get(id)
     form = QuestionForm()
-    question.question = form.data['question']
-    question.details = form.data['details']
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        question.question = form.data['question']
+        question.details = form.data['details']
 
-    db.session.add(question)
-    db.session.commit()
-    return question.to_dict()
+        db.session.add(question)
+        db.session.commit()
+        return question.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 # delete question
