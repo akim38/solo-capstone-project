@@ -41,7 +41,7 @@ const AnswerForm = () => {
     return (
         <div className="answer-form-area">
             <button className="show-answer-form" onClick={() => setShowForm(!showForm)}>
-                <ion-icon name="chatbubble-outline"></ion-icon>
+                <ion-icon name="create-outline"></ion-icon>
                 Answer
             </button>
             {showForm && (
@@ -64,9 +64,9 @@ const AnswerForm = () => {
                                 onChange={e => setAnswer(e.target.value)}
                             />
                         </label>
-                        <div className="button-container">
-                            <button type="submit">Post</button>
-                            <button type="button" onClick={handleCancelClick}>Cancel</button>
+                        <div className="answer-button-container">
+                            <button id="post-answer" type="submit">Post</button>
+                            <button id="cancel-answer" type="button" onClick={handleCancelClick}>Cancel</button>
                         </div>
                     </form>
                 </div>
