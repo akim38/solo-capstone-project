@@ -1,11 +1,19 @@
 .create-question-modal {
-    background-color: rgba(255, 255, 255, .5);
-    margin-bottom: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.226);
-    border-radius: 7px;
-    color: var(--accent-color-3);
-    padding: 15px 5px;
+    background-color: rgb(48, 144, 235);
+    color: white;
+    font-size: 16px;
+    padding: 8px 25px;
+    margin-top: 8px;
+    margin-right: 10px;
+    border: 0.8px solid rgba(0, 0, 0, 0.226);
+    border-radius: 20px;
     font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.create-question-modal:hover {
+    background-color: rgb(104, 173, 238);
 }
 
 #modal-content {
