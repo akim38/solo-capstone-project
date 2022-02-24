@@ -34,14 +34,27 @@
 
 <h1 style='font-weight: bold'> Features </h1>
 
+
 <h3>Splash Page</h3>
+
+![splash](https://user-images.githubusercontent.com/89177551/155601769-b3df3e43-4583-4e87-9923-990861db957e.PNG)
 Users are able to sign up for an account using a unique email address and username or sign into their existing account by submitting their credentials.
 
 
 <h3>Questions</h3>
+
+![question-list](https://user-images.githubusercontent.com/89177551/155601920-a18ee5aa-c362-4c40-9af4-0e6eb422e957.PNG)
+![create-question](https://user-images.githubusercontent.com/89177551/155601954-e039b37d-5d72-4913-b0f5-be28d4d72e9e.PNG)
+![question-detail](https://user-images.githubusercontent.com/89177551/155601991-78adfcfd-3771-43f3-885a-16f517480446.PNG)
+
 Users are able to view questions once they are logged in. They are able to click on questions to get more details or answer them. Users are also able to post their own questions as well and add context/details to their question if they choose too. When viewing the details of a question the user has created, the user is also able to edit their question or delete the question if they choose.
 
 <h3>Answers</h3>
+
+![post-answer](https://user-images.githubusercontent.com/89177551/155602023-0b672ee3-9f33-4c0e-8139-54f8382d34a7.PNG)
+![edit-answer](https://user-images.githubusercontent.com/89177551/155602034-a8b05b69-9ebb-4403-ad98-1b34bdee310e.PNG)
+
+
 Users are able to answer questions they feel they can contribute to. They can view other users' answers when viewing question details. They can also edit or delete answers they have created.
 
 <h3>Comments</h3>
