@@ -53,4 +53,7 @@ h5 {
     font-size: var(--h5-size);
 }
 
-
+.errors {
+    color: rgb(200, 72, 72);
+    margin: 8px 15px;
+}

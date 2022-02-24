@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { editQuestion } from "../../store/questions";
+import { editQuestion, getSingleQuestion } from "../../store/questions";
 
 
 const QuestionEditForm = ({ setShowModal }) => {
@@ -16,23 +16,20 @@ const QuestionEditForm = ({ setShowModal }) => {
     const [errors, setErrors] = useState([]);
 
     const handleSubmit = async (e) => {
-        // e.preventDefault();
-        console.log('handle submission')
+        e.preventDefault();
+
         const payload = {
             question,
             details
         };
 
-        const editedQuestion = await dispatch(editQuestion(questionId, payload))
-            // .catch(async (res) => {
-            //     const data = await res.json();
-            //     if (data && data.errors) return setErrors(data.errors)
-            // })
-
-            // if (editedQuestion) {
-            //     setShowModal(false);
-            //     history.push(`/questions/`)
-            // }
+        const data = await dispatch(editQuestion(questionId, payload))
+        if (data.errors) {
+            setErrors(data.errors)
+        } else {
+            setShowModal(false);
+            dispatch(getSingleQuestion(questionId))
+        }
     };
 
     const handleCancelClick = (e) => {

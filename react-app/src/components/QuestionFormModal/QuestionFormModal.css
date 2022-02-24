@@ -60,6 +60,10 @@
     font-size: var(--h5-size);
 }
 
+.button-container {
+    margin-bottom: 20px;
+}
+
 .create-question-btn {
     background-color: rgb(48, 144, 235);
     color: white;

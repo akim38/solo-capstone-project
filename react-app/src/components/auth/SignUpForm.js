@@ -50,7 +50,7 @@ const SignUpForm = () => {
   return (
     <div className='signup-form'>
       <form onSubmit={onSignUp}>
-        <div>
+        <div className='errors'>
           {errors.map((error, ind) => (
             <div key={ind}>{error}</div>
           ))}
@@ -99,7 +99,9 @@ const SignUpForm = () => {
             required={true}
           ></input>
         </div>
-        <button className='signup-btn' type='submit'>Sign Up</button>
+        <div>
+          <button className='signup-btn' type='submit'>Sign Up</button>
+        </div>
       </form>
     </div>
   );
