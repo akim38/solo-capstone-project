@@ -68,8 +68,8 @@ const QuestionForm = ({ setShowModal }) => {
                     />
                 </label>
                 <div className="button-container">
-                    <button type="submit">Create New Question</button>
-                    <button type="button" onClick={handleCancelClick}>Cancel</button>
+                    <button className="create-question-btn" type="submit">Create New Question</button>
+                    <button className="cancel-create-question-btn" type="button" onClick={handleCancelClick}>Cancel</button>
                 </div>
             </form>
         </div>
