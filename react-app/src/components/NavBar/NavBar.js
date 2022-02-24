@@ -11,24 +11,24 @@ const NavBar = () => {
       <ul>
         <li>
           <NavLink to='/' exact={true} activeClassName='active'>
-            Home
-          </NavLink>
-        </li>
-        {/* <li>
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
+          <ion-icon name="home-outline"></ion-icon>
           </NavLink>
         </li>
         <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
+          <NavLink to='/about' exact={true} activeClassName='active'>
+            About
           </NavLink>
         </li>
         <li>
-          <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink>
-        </li> */}
+          <a href='https://github.com/akim38/solo-capstone-project' className="about__link" target="_blank" rel="noreferrer">
+          <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </li>
+        <li>
+          <a href='https://www.linkedin.com/in/aletheia-kim-47086922a/' className="about__link" target="_blank" rel="noreferrer">
+          <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
         <li>
           <LogoutButton />
         </li>
