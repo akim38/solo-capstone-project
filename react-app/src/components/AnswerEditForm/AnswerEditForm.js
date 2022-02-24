@@ -25,16 +25,12 @@ const AnswerEditForm = ({ answerId, setShowModal }) => {
         }
 
         const data = await dispatch(editAnswer(payload, answerId))
-        setShowModal(false);
-        history.push(`/questions/${questionId}`)
-        // if (data.errors) {
-        //     setErrors(data.errors)
-        // } else {
-        //     setShowForm(false);
-        //     getQuestionAnswers(questionId);
-        //     // history.push(`/questions/${questionId}`)
-        //     history.go()
-        // }
+        if (data.errors) {
+            setErrors(data.errors)
+        } else {
+            setShowModal(false);
+            history.push(`/questions/${questionId}`)
+        }
     };
 
     const handleCancelClick = (e) => {
