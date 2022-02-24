@@ -1,7 +1,7 @@
 <h1 style='font-weight: bold'>QueWhat</h1>
 <div>
 <p>QueWhat is a clone inspired by <a style='font-weight: bold' href='https://www.quora.com/'>Quora</a>, a site where users can ask questions and answer questions with other users. This project is a current work in progress which will be continuously updated along with the README. Live site can be seen <a style='font-weight: bold' href='https://quewhat.herokuapp.com/'>here</a>!
-<br></br> 
+<br></br>
 </p>
 
 </div>
@@ -32,23 +32,24 @@
 </ul>
 </div>
 
-<h1 style='font-weight: bold'> Features </h1> 
+<h1 style='font-weight: bold'> Features </h1>
 
-###Splash Page
-Users are able to sign up for an account using a unique email address and username or sign into their existing account by submitting their credentials. 
-
-###Questions
-Users are able to view questions once they are logged in. They are able to click on questions to get more details or answer them. Users are also able to post their own questions as well and add context/details to their question if they choose too. When viewing the details of a question the user has created, the user is also able to edit their question or delete the question if they choose. 
-
-###Answers 
-Users are able to answer questions they feel they can contribute to. They can view other users' answers when viewing question details. They can also edit or delete answers they have created. 
-
-###Comments
-(Coming soon.) Users will be able to comment on answers if they choose to, to either add to the answer or point out things that may not be correct. 
+<h3>Splash Page</h3>
+Users are able to sign up for an account using a unique email address and username or sign into their existing account by submitting their credentials.
 
 
-###Upvotes 
-(Comming soon.) Users will be able to upvote or downvote on answers they think are good or bad at responding to the question. Answers will be ordered by number of upvotes with the answer with the most upvotes at the top and the least towards the bottom. 
+<h3>Questions</h3>
+Users are able to view questions once they are logged in. They are able to click on questions to get more details or answer them. Users are also able to post their own questions as well and add context/details to their question if they choose too. When viewing the details of a question the user has created, the user is also able to edit their question or delete the question if they choose.
+
+<h3>Answers</h3>
+Users are able to answer questions they feel they can contribute to. They can view other users' answers when viewing question details. They can also edit or delete answers they have created.
+
+<h3>Comments</h3>
+(Coming soon.) Users will be able to comment on answers if they choose to, to either add to the answer or point out things that may not be correct.
+
+
+<h3>Upvotes</h3>
+(Comming soon.) Users will be able to upvote or downvote on answers they think are good or bad at responding to the question. Answers will be ordered by number of upvotes with the answer with the most upvotes at the top and the least towards the bottom.
 
 
 <h1 style='font-weight: bold'> Getting Started </h1>
@@ -77,12 +78,12 @@ Users are able to answer questions they feel they can contribute to. They can vi
     * ```flask db upgrade```
     * ```flask seed all```
 
-6. You can start the server from the root directory. 
+6. You can start the server from the root directory.
 
     * ```flask run```
 
 
-7. You can start the front end from the react-app directory. 
+7. You can start the front end from the react-app directory.
 
     * ```npm start```
 
