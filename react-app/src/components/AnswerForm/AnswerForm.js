@@ -58,6 +58,7 @@ const AnswerForm = () => {
                         <label htmlFor="answer">
                             <textarea
                                 type="text"
+                                className="post-answer"
                                 placeholder="Write your answer"
                                 id='answer'
                                 value={answer}

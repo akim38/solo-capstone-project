@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { createAnswer, editAnswer, getQuestionAnswers } from "../../store/answers";
 
+import './AnswerEditForm.css'
 
 const AnswerEditForm = ({ answerId, setShowModal }) => {
     const { questionId } = useParams()
@@ -14,7 +15,6 @@ const AnswerEditForm = ({ answerId, setShowModal }) => {
 
     const [answer, setAnswer] = useState(oldAnswer?.answer);
     const [errors, setErrors] = useState([]);
-    // const [showForm, setShowForm] = useState(false);
 
 
     const handleSubmit = async (e) => {
@@ -45,32 +45,30 @@ const AnswerEditForm = ({ answerId, setShowModal }) => {
 
     return (
         <div className="answer-edit-area">
-
-
-                <div className="answer-edit">
-                    {errors.length > 0 && (
-                        <div className="errors">
-                            The following errors were found:
-                            <ul>
-                                {errors.map(error => <li key={error}>{error}</li>)}
-                            </ul>
-                        </div>
-                    )}
-                    <form onSubmit={handleSubmit}>
-                        <label htmlFor="answer">
-                            <textarea
-                                type="text"
-                                id='answer'
-                                value={answer}
-                                onChange={e => setAnswer(e.target.value)}
-                            />
-                        </label>
-                        <div className="button-container">
-                            <button type="submit">Post</button>
-                            <button type="button" onClick={handleCancelClick}>Cancel</button>
-                        </div>
-                    </form>
-                </div>
+            <div className="answer-edit">
+                {errors.length > 0 && (
+                    <div className="errors">
+                        The following errors were found:
+                        <ul>
+                            {errors.map(error => <li key={error}>{error}</li>)}
+                        </ul>
+                    </div>
+                )}
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="answer"> Edit Answer</label>
+                        <textarea
+                            type="text"
+                            className="edit-text-area"
+                            id='answer'
+                            value={answer}
+                            onChange={e => setAnswer(e.target.value)}
+                        />
+                    <div className="answer-edit-button-container">
+                        <button className="edit-answer" type="submit">Post</button>
+                        <button className="cancel-edit-answer" type="button" onClick={handleCancelClick}>Cancel</button>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 };
