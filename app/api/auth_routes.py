@@ -62,6 +62,8 @@ def sign_up():
     form = SignUpForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
+        # if form.data['password'] != form.data['repeat_password']:
+        #     return {'errors': ['Confirmed Password does not match']}, 401
         user = User(
             username=form.data['username'],
             email=form.data['email'],
