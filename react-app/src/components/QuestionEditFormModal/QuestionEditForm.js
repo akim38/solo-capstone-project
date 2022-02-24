@@ -70,8 +70,8 @@ const QuestionEditForm = ({ setShowModal }) => {
                     />
                 </label>
                 <div className="button-container">
-                    <button type="submit">Edit Question</button>
-                    <button type="button" onClick={handleCancelClick}>Cancel</button>
+                    <button className="edit-question-btn" type="submit">Edit Question</button>
+                    <button className="cancel-edit-question-btn" type="button" onClick={handleCancelClick}>Cancel</button>
                 </div>
             </form>
         </div>
