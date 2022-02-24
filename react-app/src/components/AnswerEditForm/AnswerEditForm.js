@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { createAnswer, editAnswer, getQuestionAnswers } from "../../store/answers";
 
 
-const AnswerEditForm = ({ answerId }) => {
+const AnswerEditForm = ({ answerId, setShowModal }) => {
     const { questionId } = useParams()
 
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const AnswerEditForm = ({ answerId }) => {
 
     const [answer, setAnswer] = useState(oldAnswer?.answer);
     const [errors, setErrors] = useState([]);
-    const [showForm, setShowForm] = useState(false);
+    // const [showForm, setShowForm] = useState(false);
 
 
     const handleSubmit = async (e) => {
@@ -25,7 +25,7 @@ const AnswerEditForm = ({ answerId }) => {
         }
 
         const data = await dispatch(editAnswer(payload, answerId))
-        setShowForm(false);
+        setShowModal(false);
         history.push(`/questions/${questionId}`)
         // if (data.errors) {
         //     setErrors(data.errors)
@@ -40,15 +40,13 @@ const AnswerEditForm = ({ answerId }) => {
     const handleCancelClick = (e) => {
         e.preventDefault();
 
-        setShowForm(false);
+        setShowModal(false);
     };
 
     return (
         <div className="answer-edit-area">
-            <button className="show-answer-edit" onClick={() => setShowForm(!showForm)}>
-                <ion-icon name="pencil-outline"></ion-icon>
-            </button>
-            {showForm && (
+
+
                 <div className="answer-edit">
                     {errors.length > 0 && (
                         <div className="errors">
@@ -73,7 +71,6 @@ const AnswerEditForm = ({ answerId }) => {
                         </div>
                     </form>
                 </div>
-            )}
         </div>
     )
 };
