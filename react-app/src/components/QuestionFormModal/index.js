@@ -11,7 +11,7 @@ const QuestionFormModal = () => {
     return (
         <>
             <button className="create-question-modal" onClick={() => setShowModal(true)}>
-                What would you like to ask?
+                Click Here To Ask A Question!
             </button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

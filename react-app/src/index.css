@@ -19,6 +19,7 @@
 body {
     font-family: var(--body-font);
     background-color: #f5f7fa;
+    margin: 0px 0px;
     /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
 }
 

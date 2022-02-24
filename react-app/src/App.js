@@ -12,6 +12,7 @@ import QuestionList from './components/QuestionList/QuestionList';
 import QuestionDetails from './components/QuestionDetails/QuestionDetails';
 import StyleGuide from './components/StyleGuide/StyleGuide';
 import SplashPage from './components/SplashPage/SplashPage';
+import About from './components/About/About';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route path='/style' exact={true}>
           <StyleGuide />
+        </Route>
+        <Route path='/about' exact={true}>
+          <About />
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
