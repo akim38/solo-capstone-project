@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import About from "../About/About";
 import LoginForm from "../auth/LoginForm";
 import SignUpForm from "../auth/SignUpForm";
 import SignUpFormModal from "../auth/SignUpFormModal";
@@ -19,9 +20,9 @@ const SplashPage = () => {
                         <LoginForm />
                     </div>
                     <div className="link-area">
-                        <NavLink to='/about' exact={true} activeClassName='active'>
+                        {/* <NavLink to='/about' exact={true} activeClassName='active'>
                             About
-                        </NavLink>
+                        </NavLink> */}
                         <a href='https://github.com/akim38/solo-capstone-project' className="about__link" target="_blank" rel="noreferrer">Github</a>
                         <a href='https://www.linkedin.com/in/aletheia-kim-47086922a/' className="about__link" target="_blank" rel="noreferrer">LinkedIn</a>
                     </div>

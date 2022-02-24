@@ -6,12 +6,19 @@ nav {
     top: 0px;
     position: fixed;
     box-shadow: 5px 5px 5px var(--accent-color-3);
+    display: inline-block;
+    text-align:center
 }
 
 ul {
     list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 li {
-    display: inline;
+    /* display: inline-block; */
+    margin-right: 30px;
+    font-size: 18px;
 }
