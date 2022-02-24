@@ -6,6 +6,7 @@ import AnswerEditForm from "../AnswerEditForm/AnswerEditForm";
 import DeleteAnswer from "./DeleteAnswer";
 
 import './Answers.css'
+import AnswerEditFormModal from "../AnswerEditForm/AnswerEditFormModal";
 
 
 const Answers = () => {
@@ -27,8 +28,8 @@ const Answers = () => {
                     <h5>{answer.username}</h5>
                     <p>{answer.answer}</p>
                     {sessionUser.id === answer?.user_id && (
-                        <div>
-                            <AnswerEditForm answerId={answer.id}/>
+                        <div className="edit-answer-btn-container">
+                            <AnswerEditFormModal answerId={answer.id}/>
                             <DeleteAnswer answerId={answer.id} questionId={questionId} />
                         </div>
                     )}

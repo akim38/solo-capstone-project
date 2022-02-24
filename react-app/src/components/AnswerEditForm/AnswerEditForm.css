@@ -1,0 +1,36 @@
+.edit-answer {
+    background-color: rgb(48, 144, 235);
+    color: white;
+    font-size: 16px;
+    padding: 8px 25px;
+    margin-top: 8px;
+    margin-right: 10px;
+    border: 0.8px solid rgba(0, 0, 0, 0.226);
+    border-radius: 20px;
+}
+
+.edit-answer:hover {
+    background-color: rgb(104, 173, 238);
+}
+
+.cancel-edit-answer {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.cancel-edit-answer:hover {
+    background-color: var(--accent-color-3);
+}
+
+.edit-text-area {
+    width: 400px;
+    height: 300px;
+    padding: 4px 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+}

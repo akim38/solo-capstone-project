@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { createAnswer, editAnswer, getQuestionAnswers } from "../../store/answers";
 
+import './AnswerEditForm.css'
 
-const AnswerEditForm = ({ answerId }) => {
+const AnswerEditForm = ({ answerId, setShowModal }) => {
     const { questionId } = useParams()
 
     const dispatch = useDispatch();
@@ -14,7 +15,6 @@ const AnswerEditForm = ({ answerId }) => {
 
     const [answer, setAnswer] = useState(oldAnswer?.answer);
     const [errors, setErrors] = useState([]);
-    const [showForm, setShowForm] = useState(false);
 
 
     const handleSubmit = async (e) => {
@@ -25,7 +25,7 @@ const AnswerEditForm = ({ answerId }) => {
         }
 
         const data = await dispatch(editAnswer(payload, answerId))
-        setShowForm(false);
+        setShowModal(false);
         history.push(`/questions/${questionId}`)
         // if (data.errors) {
         //     setErrors(data.errors)
@@ -40,40 +40,35 @@ const AnswerEditForm = ({ answerId }) => {
     const handleCancelClick = (e) => {
         e.preventDefault();
 
-        setShowForm(false);
+        setShowModal(false);
     };
 
     return (
         <div className="answer-edit-area">
-            <button className="show-answer-edit" onClick={() => setShowForm(!showForm)}>
-                <ion-icon name="pencil-outline"></ion-icon>
-            </button>
-            {showForm && (
-                <div className="answer-edit">
-                    {errors.length > 0 && (
-                        <div className="errors">
-                            The following errors were found:
-                            <ul>
-                                {errors.map(error => <li key={error}>{error}</li>)}
-                            </ul>
-                        </div>
-                    )}
-                    <form onSubmit={handleSubmit}>
-                        <label htmlFor="answer">
-                            <textarea
-                                type="text"
-                                id='answer'
-                                value={answer}
-                                onChange={e => setAnswer(e.target.value)}
-                            />
-                        </label>
-                        <div className="button-container">
-                            <button type="submit">Post</button>
-                            <button type="button" onClick={handleCancelClick}>Cancel</button>
-                        </div>
-                    </form>
-                </div>
-            )}
+            <div className="answer-edit">
+                {errors.length > 0 && (
+                    <div className="errors">
+                        The following errors were found:
+                        <ul>
+                            {errors.map(error => <li key={error}>{error}</li>)}
+                        </ul>
+                    </div>
+                )}
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="answer"> Edit Answer</label>
+                        <textarea
+                            type="text"
+                            className="edit-text-area"
+                            id='answer'
+                            value={answer}
+                            onChange={e => setAnswer(e.target.value)}
+                        />
+                    <div className="answer-edit-button-container">
+                        <button className="edit-answer" type="submit">Post</button>
+                        <button className="cancel-edit-answer" type="button" onClick={handleCancelClick}>Cancel</button>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 };

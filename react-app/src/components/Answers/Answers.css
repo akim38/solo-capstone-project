@@ -5,3 +5,16 @@
     padding: 20px 80px 20px 50px;
     margin: 10px 0px;
 }
+
+.edit-answer-btn-container {
+    display: flex;
+    justify-content: end;
+}
+
+.edit-answer-btn-container button {
+    background-color: rgba(255, 255, 255, .3);
+    margin-right: 5px;
+    border: 1px solid var(--accent-color-3);
+    border-radius: 2px;
+    padding: 3px 7px;
+}

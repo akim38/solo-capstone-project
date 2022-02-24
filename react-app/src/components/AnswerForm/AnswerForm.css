@@ -3,17 +3,52 @@
     border: none;
     border-radius: 20px;
     font-size: 18px;
-    padding: 2px 8px;
+    /* padding: 2px 8px; */
+    margin-bottom: 10px;
+    padding: 8px 20px;
 }
 
 .show-answer-form:hover {
     background-color: var(--accent-color-3);
 }
 
-#answer {
+.post-answer {
     width: 550px;
     height: 170px;
     padding: 4px 4px;
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+#post-answer {
+    background-color: rgb(48, 144, 235);
+    color: white;
+    font-size: 16px;
+    padding: 8px 25px;
+    margin-top: 8px;
+    margin-right: 10px;
+    border: 0.8px solid rgba(0, 0, 0, 0.226);
+    border-radius: 20px;
+}
+
+#post-answer:hover {
+    background-color: rgb(104, 173, 238);
+}
+
+#cancel-answer {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+#cancel-answer:hover {
+    background-color: var(--accent-color-3);
+}
+
+.answer-button-container {
+    display: flex;
+    justify-content: end;
 }
