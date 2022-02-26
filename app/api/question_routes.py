@@ -53,6 +53,7 @@ def edit_question(id):
     question = Question.query.get(id)
     form = QuestionForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    form['check_id'].data = id
     if form.validate_on_submit():
         question.question = form.data['question']
         question.details = form.data['details']
