@@ -48,7 +48,12 @@ const LoginForm = () => {
         <form onSubmit={onLogin}>
           <div className='errors'>
             {errors.map((error, ind) => (
-              <div key={ind}>{error}</div>
+              <div key={ind}>
+                {error.includes(': ') ?
+                error.split(": ")[1]
+                : error
+                }
+              </div>
             ))}
           </div>
           <div>
