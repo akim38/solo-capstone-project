@@ -16,7 +16,7 @@ const NavBar = () => {
             QueWhat
             </NavLink>
           </li> */}
-          <li>
+          <li className='nav-icon'>
             <NavLink to='/' exact={true} activeClassName='active'>
             <ion-icon name="home-outline"></ion-icon>
             </NavLink>
@@ -26,12 +26,12 @@ const NavBar = () => {
               About
             </NavLink>
           </li>
-          <li>
+          <li className='nav-icon'>
             <a href='https://github.com/akim38/solo-capstone-project' className="about__link" target="_blank" rel="noreferrer">
             <ion-icon className='icon' name="logo-github"></ion-icon>
             </a>
           </li>
-          <li>
+          <li className='nav-icon'>
             <a href='https://www.linkedin.com/in/aletheia-kim-47086922a/' className="about__link" target="_blank" rel="noreferrer">
             <ion-icon className='icon' name="logo-linkedin"></ion-icon>
             </a>

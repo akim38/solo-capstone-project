@@ -33,6 +33,10 @@
     padding: 3px 7px;
 }
 
+.detail-button-container button:hover {
+    background-color: var(--accent-color-3);
+}
+
 .author {
     font-style: italic;
     font-size: 15px;
