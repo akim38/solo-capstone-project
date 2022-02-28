@@ -16,3 +16,7 @@
     font-size: var(--h4-size);
     box-shadow: 5px 5px 5px var(--accent-color-3);
 }
+
+.question-box:hover {
+    box-shadow: 5px 5px 5px rgb(104, 173, 238);
+}

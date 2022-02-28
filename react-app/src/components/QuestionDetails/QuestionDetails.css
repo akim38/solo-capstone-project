@@ -1,8 +1,9 @@
 .question-page {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     flex-direction: column;
-    margin-left: 250px;
+    /* margin-left: 250px; */
+    align-items: center;
     margin-top: 100px;
 }
 
@@ -30,6 +31,10 @@
     border: 1px solid var(--accent-color-3);
     border-radius: 2px;
     padding: 3px 7px;
+}
+
+.detail-button-container button:hover {
+    background-color: var(--accent-color-3);
 }
 
 .author {
