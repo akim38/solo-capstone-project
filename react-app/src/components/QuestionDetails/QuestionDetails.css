@@ -1,8 +1,9 @@
 .question-page {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     flex-direction: column;
-    margin-left: 250px;
+    /* margin-left: 250px; */
+    align-items: center;
     margin-top: 100px;
 }
 
