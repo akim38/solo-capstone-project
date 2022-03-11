@@ -22,6 +22,16 @@ const deleteComment = (commentId) => ({
 
 
 //thunks
+export const getComments = () => async dispatch => {
+    const res = await fetch(`/api/comments/`);
+
+    if (res.ok) {
+        const answers = await res.json();
+
+        dispatch(loadComments(answers))
+    }
+};
+
 export const getCommentsToAnswer = (answerId) => async dispatch => {
     const res = await fetch(`/api/answers/${answerId}/comments/`)
 
@@ -97,6 +107,7 @@ export const removeComment = (commentId) => async dispatch => {
         return comment;
     }
 };
+
 
 //reducer
 const initialState = { byId: {} }
