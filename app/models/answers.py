@@ -11,6 +11,7 @@ class Answer(db.Model):
 
     user = db.relationship("User", back_populates='answers')
     question = db.relationship("Question", back_populates='answers')
+    comments = db.relationship("Comment", back_populates='answer', cascade="all, delete")
 
     def to_dict(self):
         return {
