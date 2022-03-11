@@ -10,6 +10,7 @@
     font-size: 20px;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .create-question-modal:hover {
