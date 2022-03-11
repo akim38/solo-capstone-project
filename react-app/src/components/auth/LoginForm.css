@@ -38,3 +38,7 @@
 .demo-btn {
     margin-bottom: 25px;
 }
+
+.login-form label {
+    padding: 10px 5px;
+}
