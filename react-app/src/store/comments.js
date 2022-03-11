@@ -38,7 +38,7 @@ export const getSingleComment = (commentId) => async dispatch => {
     if (res.ok) {
         const comment = await res.json();
 
-        dispatch(loadAnswers(comment))
+        dispatch(loadComments(comment))
     }
 };
 
@@ -126,7 +126,7 @@ const commentReducer = (state = initialState, action) => {
 
             delete newState.byId[action.commentId]
 
-            return newState; 
+            return newState;
         }
         default:
             return state;
