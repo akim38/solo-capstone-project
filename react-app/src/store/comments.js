@@ -105,17 +105,32 @@ const commentReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
         case LOAD_COMMENTS: {
+            newState = { ...state }
 
+            newState.byId = action.comments.comments.reduce((comments, comment) => {
+                comments[comment.id] = comment;
+                return comments;
+            }, {});
+
+            return newState;
         }
         case ADD_COMMENT: {
+            newState = { ...state }
 
+            newState.byId[action.comment.id] = action.comment;
+
+            return newState;
         }
         case DELETE_COMMENT: {
+            newState = { ...state }
 
+            delete newState.byId[action.commentId]
+
+            return newState; 
         }
         default:
             return state;
     }
 }
 
-export default commentReducer; 
+export default commentReducer;
