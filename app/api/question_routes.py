@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from app.api.auth_routes import validation_errors_to_error_messages
-from app.models import db, Question, User, Answer
+from app.models import db, Question, User, Answer, Comment
 from app.forms import QuestionForm, AnswerForm
 from flask_login import current_user, login_required
 
@@ -85,6 +85,13 @@ def get_answer(id):
     for answer in answers:
         user = User.query.filter(User.id == answer['user_id']).first()
         answer['username'] = user.username
+
+        comments = Comment.query.filter(Comment.answer_id == answer['id']).all()
+        answerComments = [comment.to_dict() for comment in comments]
+        for comment in answerComments:
+            user = User.query.filter(User.id == comment['user_id']).first()
+            comment['username'] = user.username
+        answer['comments'] = answerComments
 
     return {'answers': answers}
 

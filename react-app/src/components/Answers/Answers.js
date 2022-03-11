@@ -34,7 +34,7 @@ const Answers = () => {
                             <DeleteAnswer answerId={answer.id} questionId={questionId} />
                         </div>
                     )}
-                    <Comments answerId={answer.id} />
+                    <Comments answerId={answer.id} answerComments={answer.comments} />
                 </div>
             ))}
 
