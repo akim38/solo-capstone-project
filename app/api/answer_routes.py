@@ -1,8 +1,8 @@
 from flask import Blueprint, request
 from app.api.auth_routes import validation_errors_to_error_messages
-from app.models import db, Question, User, Answer
+from app.models import db, Question, User, Answer, Comment
 from flask_login import current_user, login_required
-from app.forms import AnswerForm
+from app.forms import AnswerForm, CommentForm
 
 
 answer_routes = Blueprint('answers', __name__)
@@ -76,5 +76,35 @@ def delete_answer(id):
     return {'message': 'Answer deleted.'}
 
 
+#get all comments on specific answer
+@answer_routes.route('/<int:id>/comments/')
+@login_required
+def get_comment(id):
+    all_comments = Comment.query.filter(Comment.answer_id == id).all()
 
+    comments = [comment.to_dict() for comment in all_comments]
+
+    for comment in comments:
+        user = User.query.filter(User.id == comment['user_id']).first()
+        comment['username'] = user.username
+
+    return {'comments': comments}
+
+
+#post comment on answer
+@answer_routes.route('/<int:id>/comments/', methods=['POST'])
+@login_required
+def post_comment(id):
+    form = CommentForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        new_comment = Comment(
+            comment=form.data['comment'],
+            user_id=current_user.id,
+            answer_id=id
+        )
+        db.session.add(new_comment)
+        db.session.commit()
+        return new_comment.to_dict()
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 

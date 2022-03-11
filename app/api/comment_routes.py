@@ -36,7 +36,7 @@ def edit_comment(id):
     form = CommentForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-        comment.comment = form.data['commment']
+        comment.comment = form.data['comment']
 
         db.session.commit()
 
