@@ -45,3 +45,7 @@
 .details {
     font-size: var(--h5-size);
 }
+
+.answer-section {
+    margin-top: 10px;
+}
