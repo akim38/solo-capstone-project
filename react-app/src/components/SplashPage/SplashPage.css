@@ -55,4 +55,6 @@
     justify-content: space-around;
     padding: 10px 0px;
     border: 0.8px solid rgba(0, 0, 0, 0.226);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
