@@ -13,6 +13,7 @@ class User(db.Model, UserMixin):
 
     questions = db.relationship('Question', back_populates='user', cascade="all, delete")
     answers = db.relationship('Answer', back_populates='user', cascade="all, delete")
+    comments = db.relationship('Comment', back_populates='user', cascade="all, delete")
 
     @property
     def password(self):
