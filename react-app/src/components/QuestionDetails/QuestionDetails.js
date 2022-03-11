@@ -43,7 +43,7 @@ const QuestionDetails = () => {
                 <p className="details">{question?.details}</p>
                 <AnswerForm />
             </div>
-            <div>
+            <div className="answer-section">
                 <Answers />
             </div>
         </div>
