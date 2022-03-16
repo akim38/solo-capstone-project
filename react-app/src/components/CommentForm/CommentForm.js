@@ -54,7 +54,7 @@ const CommentForm = ({ answerId }) => {
                             <textarea
                                 type="text"
                                 className="comment"
-                                placeholder="Reply"
+                                placeholder="Write a comment..."
                                 id='comment'
                                 value={comment}
                                 onChange={e => setComment(e.target.value)}
