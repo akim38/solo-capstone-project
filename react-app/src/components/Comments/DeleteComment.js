@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux"
 import { useHistory, useParams } from "react-router-dom";
+import { getQuestionAnswers } from "../../store/answers";
 import { removeComment } from "../../store/comments"
 
 const DeleteComment = ({ commentId }) => {
@@ -12,7 +13,10 @@ const DeleteComment = ({ commentId }) => {
         e.preventDefault()
 
         await dispatch(removeComment(commentId))
-            .then((res) => history.push(`/questions/${questionId}`))
+            .then((res) => {
+                dispatch(getQuestionAnswers(questionId))
+                // history.push(`/questions/${questionId}`)
+            })
     }
 
     return (

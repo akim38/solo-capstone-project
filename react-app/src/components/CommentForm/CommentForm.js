@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createComment, getCommentsToAnswer } from "../../store/comments";
+import { useParams } from "react-router-dom";
+import { getQuestionAnswers } from "../../store/answers";
+import { createComment } from "../../store/comments";
 
 const CommentForm = ({ answerId }) => {
+
+    const { questionId } = useParams();
 
     const dispatch = useDispatch();
     const [comment, setComment] = useState('');
@@ -22,7 +26,7 @@ const CommentForm = ({ answerId }) => {
             setErrors(data.errors)
         } else {
             setShowForm(false);
-            dispatch(getCommentsToAnswer(answerId));
+            dispatch(getQuestionAnswers(questionId));
             setComment('');
         }
     };
