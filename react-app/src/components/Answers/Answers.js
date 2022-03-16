@@ -8,6 +8,7 @@ import DeleteAnswer from "./DeleteAnswer";
 import './Answers.css'
 import AnswerEditFormModal from "../AnswerEditForm/AnswerEditFormModal";
 import Comments from "../Comments/Comments";
+import CommentForm from "../CommentForm/CommentForm";
 
 
 const Answers = () => {
