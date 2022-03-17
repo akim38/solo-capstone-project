@@ -1,8 +1,8 @@
 const EditComment = ({ commentId }) => {
 
     return (
-        <button>Edit</button>
+        <p>hello</p>
     )
 };
 
-export default EditComment; 
+export default EditComment;

@@ -20,13 +20,13 @@ const Comments = ({ answerId, answerComments }) =>  {
             {answerComments.map(comment => (
                 <div className="comment-box" key={comment.comment}>
                     <h5>{comment.username}</h5>
-                    {!showCommentEdit && (
-                        <p>{comment.comment}</p>
-                    )}
+                    {showCommentEdit ? (
+                        <EditComment commentId={comment.id} />
+                    ) : <p>{comment.comment}</p>
+                    }
                     {sessionUser.id === comment?.user_id && (
                         <div>
-                            <button onClick={editComment} >trying edit</button>
-                            {/* <EditComment commentId={comment.id} /> */}
+                            <button onClick={editComment}>Edit</button>
                             <DeleteComment commentId={comment.id} />
                         </div>
                     )}
