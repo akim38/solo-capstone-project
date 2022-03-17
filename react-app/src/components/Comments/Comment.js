@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import EditComment from "./EditComment";
 import DeleteComment from "./DeleteComment";
 
+import './Comments.css';
+
 const Comment = ({ comment }) => {
     const sessionUser = useSelector(state => state.session.user)
     const [showCommentEdit, setShowCommentEdit] = useState(false);

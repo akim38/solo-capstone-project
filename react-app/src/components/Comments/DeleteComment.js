@@ -1,7 +1,9 @@
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getQuestionAnswers } from "../../store/answers";
-import { removeComment } from "../../store/comments"
+import { removeComment } from "../../store/comments";
+
+import './Comments.css';
 
 const DeleteComment = ({ commentId }) => {
     const dispatch = useDispatch();

@@ -1,6 +1,8 @@
 import CommentForm from "../CommentForm/CommentForm";
 import Comment from "./Comment";
 
+import './Comments.css';
+
 const Comments = ({ answerId, answerComments }) =>  {
 
     return (

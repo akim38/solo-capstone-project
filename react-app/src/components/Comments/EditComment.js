@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { getQuestionAnswers } from "../../store/answers";
 import { editComment } from "../../store/comments";
 
+import './Comments.css';
+
 const EditComment = ({ comment }) => {
     const { questionId } = useParams();
 
