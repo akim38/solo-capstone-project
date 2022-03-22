@@ -25,5 +25,5 @@ def undo():
     undo_users()
     undo_questions()
     undo_answers()
-    undo_comments
+    undo_comments()
     # Add other undo functions here
