@@ -10,7 +10,7 @@ def seed_answers():
     answer_05 = Answer(answer='Who knows...', user_id=1, question_id=5)
     answer_06 = Answer(answer='Hey, your question could use a little more context.. There are many ways to intepret that question and I am not sure which way you are asking...', user_id=3, question_id=5)
     answer_07 = Answer(answer='Win the lottery.', user_id=1, question_id=6)
-    answer_08 = Answer(answer='Becoming rich is no easy feat. You would need to save and invest properly.', user_id=2, question_id=6)
+    answer_08 = Answer(answer='Becoming rich is no easy feat. You would need to save and invest properly.', user_id=3, question_id=6)
 
     db.session.add(answer_01)
     db.session.add(answer_02)
