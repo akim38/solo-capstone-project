@@ -26,13 +26,6 @@ def vote(id):
 
     return {'vote': [vote_info]}
 
-#post vote
-# @vote_routes.route('/up', methods=['POST'])
-# @login_required
-# def new_upvote():
-
-
-
 
 #edit vote
 @vote_routes.route('/<int:id>/up/', methods=['PUT'])
