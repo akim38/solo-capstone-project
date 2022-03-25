@@ -108,40 +108,4 @@ def post_comment(id):
         return new_comment.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
-#post upvote on answer
-@answer_routes.route('/<int:id>/upvote/', methods=['POST'])
-@login_required
-def new_upvote(id):
-    new_vote = Vote(
-        user_id=current_user.id,
-        answer_id=id,
-        upvoted=True,
-        downvoted=False
-    )
 
-    answer = Answer.query.get(id)
-    answer.upvote_count += 1
-
-    db.session.add(new_vote)
-    db.session.commit()
-
-    return answer.to_dict()
-
-#post downvote on answer
-@answer_routes.route('/<int:id>/downvote/', methods=['POST'])
-@login_required
-def new_downvote(id):
-    new_vote = Vote(
-        user_id=current_user.id,
-        answer_id=id,
-        upvoted=False,
-        downvoted=True
-    )
-
-    answer = Answer.query.get(id)
-    answer.downvote_count += 1
-
-    db.session.add(new_vote)
-    db.session.commit()
-
-    return answer.to_dict()

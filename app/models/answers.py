@@ -27,10 +27,10 @@ class Answer(db.Model):
     #             self.downvote_count += 1
 
     def to_dict(self):
-        all_upvotes = Vote.query.filter(Vote.answer_id == self.id and Vote.upvoted == True).all()
+        all_upvotes = Vote.query.filter(Vote.answer_id == self.id, Vote.upvoted == True).all()
         upvotes = [upvote.to_dict() for upvote in all_upvotes]
 
-        all_downvotes = Vote.query.filter(Vote.answer_id == self.id and Vote.downvoted == True).all()
+        all_downvotes = Vote.query.filter(Vote.answer_id == self.id, Vote.downvoted == True).all()
         downvotes = [downvote.to_dict() for downvote in all_downvotes]
 
         return {
