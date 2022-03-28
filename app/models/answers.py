@@ -1,5 +1,6 @@
 from .db import db
 from .votes import Vote
+from .user import User
 
 
 class Answer(db.Model):
@@ -33,11 +34,14 @@ class Answer(db.Model):
         all_downvotes = Vote.query.filter(Vote.answer_id == self.id, Vote.downvoted == True).all()
         downvotes = [downvote.to_dict() for downvote in all_downvotes]
 
+        user = User.query.get(self.user_id)
+
         return {
             'id': self.id,
             'answer': self.answer,
             'user_id': self.user_id,
             'question_id': self.question_id,
             'upvote_count': len(upvotes),
-            'downvote_count': len(downvotes)
+            'downvote_count': len(downvotes),
+            'username': user.username
         }

@@ -21,12 +21,8 @@ def answers():
 @login_required
 def answer(id):
     answer = Answer.query.get(id)
-    username = answer.user.username
 
-    answer_info = answer.to_dict()
-    answer_info['username'] = username
-
-    return {'answers': [answer_info]}
+    return {'answers': [answer.to_dict()]}
 
 
 # #post answer on question
@@ -59,11 +55,7 @@ def edit_answer(id):
 
         db.session.commit()
 
-        username = answer.user.username
-        answer_info = answer.to_dict()
-        answer_info['username'] = username
-
-        return answer_info
+        return answer.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 #delete answer
