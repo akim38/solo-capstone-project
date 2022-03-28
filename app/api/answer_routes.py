@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from app.api.auth_routes import validation_errors_to_error_messages
-from app.models import db, Question, User, Answer, Comment
+from app.models import db, Question, User, Answer, Comment, Vote
 from flask_login import current_user, login_required
 from app.forms import AnswerForm, CommentForm
 
@@ -21,12 +21,8 @@ def answers():
 @login_required
 def answer(id):
     answer = Answer.query.get(id)
-    username = answer.user.username
 
-    answer_info = answer.to_dict()
-    answer_info['username'] = username
-
-    return {'answers': [answer_info]}
+    return {'answers': [answer.to_dict()]}
 
 
 # #post answer on question
@@ -59,11 +55,7 @@ def edit_answer(id):
 
         db.session.commit()
 
-        username = answer.user.username
-        answer_info = answer.to_dict()
-        answer_info['username'] = username
-
-        return answer_info
+        return answer.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 #delete answer
@@ -84,9 +76,9 @@ def get_comment(id):
 
     comments = [comment.to_dict() for comment in all_comments]
 
-    for comment in comments:
-        user = User.query.filter(User.id == comment['user_id']).first()
-        comment['username'] = user.username
+    # for comment in comments:
+    #     user = User.query.filter(User.id == comment['user_id']).first()
+    #     comment['username'] = user.username
 
     return {'comments': comments}
 
@@ -108,3 +100,40 @@ def post_comment(id):
         return new_comment.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
+
+
+#post upvote on answer
+@answer_routes.route('/<int:id>/upvote/', methods=['POST'])
+@login_required
+def new_upvote(id):
+    new_vote = Vote(
+        user_id=current_user.id,
+        answer_id=id,
+        upvoted=True,
+        downvoted=False
+    )
+
+    db.session.add(new_vote)
+    db.session.commit()
+
+    answer = Answer.query.get(id)
+
+    return {'answers': [answer.to_dict()]}
+
+#post downvote on answer
+@answer_routes.route('/<int:id>/downvote/', methods=['POST'])
+@login_required
+def new_downvote(id):
+    new_vote = Vote(
+        user_id=current_user.id,
+        answer_id=id,
+        upvoted=False,
+        downvoted=True
+    )
+
+    db.session.add(new_vote)
+    db.session.commit()
+
+    answer = Answer.query.get(id)
+
+    return {'answers': [answer.to_dict()]}

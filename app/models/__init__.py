@@ -3,3 +3,4 @@ from .user import User
 from .questions import Question
 from .answers import Answer
 from .comments import Comment
+from .votes import Vote

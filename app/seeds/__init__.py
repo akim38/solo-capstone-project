@@ -1,4 +1,6 @@
 from flask.cli import AppGroup
+
+from app.seeds.votes import seed_votes
 from .users import seed_users, undo_users
 from .questions import seed_questions, undo_questions
 from .answers import seed_answers, undo_answers
@@ -16,6 +18,7 @@ def seed():
     seed_questions()
     seed_answers()
     seed_comments()
+    seed_votes()
     # Add other seed functions here
 
 
@@ -25,5 +28,5 @@ def undo():
     undo_users()
     undo_questions()
     undo_answers()
-    undo_comments
+    undo_comments()
     # Add other undo functions here

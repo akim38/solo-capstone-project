@@ -20,12 +20,12 @@ def questions():
 @login_required
 def question(id):
     question = Question.query.get(id)
-    username = question.user.username
+    # username = question.user.username
 
-    question_info = question.to_dict()
-    question_info['username'] = username
+    # question_info = question.to_dict()
+    # question_info['username'] = username
 
-    return {'questions': [question_info]}
+    return {'questions': [question.to_dict()]}
 
 
 # post question
@@ -83,14 +83,14 @@ def get_answer(id):
     answers = [answer.to_dict() for answer in all_answers]
 
     for answer in answers:
-        user = User.query.filter(User.id == answer['user_id']).first()
-        answer['username'] = user.username
+        # user = User.query.filter(User.id == answer['user_id']).first()
+        # answer['username'] = user.username
 
         comments = Comment.query.filter(Comment.answer_id == answer['id']).all()
         answerComments = [comment.to_dict() for comment in comments]
-        for comment in answerComments:
-            user = User.query.filter(User.id == comment['user_id']).first()
-            comment['username'] = user.username
+        # for comment in answerComments:
+        #     user = User.query.filter(User.id == comment['user_id']).first()
+        #     comment['username'] = user.username
         answer['comments'] = answerComments
 
     return {'answers': answers}

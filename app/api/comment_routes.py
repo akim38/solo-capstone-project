@@ -21,11 +21,11 @@ def comments():
 @login_required
 def comment(id):
     comment = Comment.query.get(id)
-    username = comment.user.username
+    # username = comment.user.username
 
-    comment_info = comment.to_dict()
-    comment_info['username'] = username
-    return {'comments': [comment_info]}
+    # comment_info = comment.to_dict()
+    # comment_info['username'] = username
+    return {'comments': [comment.to_dict()]}
 
 
 #edit comment
@@ -40,11 +40,11 @@ def edit_comment(id):
 
         db.session.commit()
 
-        username = comment.user.username
-        comment_info = comment.to_dict()
-        comment_info['username'] = username
+        # username = comment.user.username
+        # comment_info = comment.to_dict()
+        # comment_info['username'] = username
 
-        return comment_info
+        return comment.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 

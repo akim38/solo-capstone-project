@@ -8,7 +8,7 @@ def seed_questions():
     question_03 = Question(question='What is the best tasting sandwich?', user_id=1)
     question_04 = Question(question='How much is a florida ounce?', details='I see it on bottles all the time! What does a Florida ounce mean?', user_id=2)
     question_05 = Question(question='Where do we come from?', user_id=2)
-    question_06 = Question(question='How do I become rich?', user_id=3)
+    question_06 = Question(question='How do I become rich?', user_id=2)
 
     db.session.add(question_01)
     db.session.add(question_02)

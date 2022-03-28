@@ -1,4 +1,5 @@
 from .db import db
+from .user import User
 
 
 class Question(db.Model):
@@ -13,11 +14,14 @@ class Question(db.Model):
     answers = db.relationship("Answer", back_populates='question', cascade="all, delete")
 
     def to_dict(self):
+        user = User.query.get(self.user_id)
+
         return {
             'id': self.id,
             'question': self.question,
             'details': self.details,
-            'user_id': self.user_id
+            'user_id': self.user_id,
+            'username': user.username
         }
 
 
