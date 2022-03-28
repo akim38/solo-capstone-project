@@ -126,7 +126,7 @@ def new_upvote(id):
 
     answer = Answer.query.get(id)
 
-    return answer.to_dict()
+    return {'answers': [answer.to_dict()]}
 
 #post downvote on answer
 @answer_routes.route('/<int:id>/downvote/', methods=['POST'])
@@ -144,4 +144,4 @@ def new_downvote(id):
 
     answer = Answer.query.get(id)
 
-    return answer.to_dict()
+    return {'answers': [answer.to_dict()]}
