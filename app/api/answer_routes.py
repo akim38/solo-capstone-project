@@ -76,9 +76,9 @@ def get_comment(id):
 
     comments = [comment.to_dict() for comment in all_comments]
 
-    for comment in comments:
-        user = User.query.filter(User.id == comment['user_id']).first()
-        comment['username'] = user.username
+    # for comment in comments:
+    #     user = User.query.filter(User.id == comment['user_id']).first()
+    #     comment['username'] = user.username
 
     return {'comments': comments}
 
