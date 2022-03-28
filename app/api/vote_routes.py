@@ -26,58 +26,27 @@ def vote(id):
 
     return {'vote': [vote_info]}
 
-# need to change to make to vote route with request im so dumb dumb dumb
-# #post upvote on answer
-# @answer_routes.route('/<int:id>/upvote/', methods=['POST'])
-# @login_required
-# def new_upvote(id):
-#     new_vote = Vote(
-#         user_id=current_user.id,
-#         answer_id=id,
-#         upvoted=True,
-#         downvoted=False
-#     )
-
-#     answer = Answer.query.get(id)
-#     answer.upvote_count += 1
-
-#     db.session.add(new_vote)
-#     db.session.commit()
-
-#     return answer.to_dict()
-
-# #post downvote on answer
-# @answer_routes.route('/<int:id>/downvote/', methods=['POST'])
-# @login_required
-# def new_downvote(id):
-#     new_vote = Vote(
-#         user_id=current_user.id,
-#         answer_id=id,
-#         upvoted=False,
-#         downvoted=True
-#     )
-
-#     answer = Answer.query.get(id)
-#     answer.downvote_count += 1
-
-#     db.session.add(new_vote)
-#     db.session.commit()
-
-#     return answer.to_dict()
-
 
 #edit vote
-@vote_routes.route('/<int:id>/up/', methods=['PUT'])
+@vote_routes.route('/<int:id>/', methods=['PUT'])
 @login_required
 def change_upvote(id):
     vote = Vote.query.get(id)
     vote.upvoted = not vote.upvoted
+    vote.downvoted = not vote.downvoted
 
-    answer = vote.answer
-    if vote.upvoted is True:
-        answer.upvote_count += 1
-    else:
-        answer.upvote_count -= 1
+    db.session.commit()
 
-    print('ANSWERANSWERANSWER??', answer)
+    editted_answer = vote.answer
 
+    return {'answers': [editted_answer.to_dict()]}
+
+
+#delete vote
+@vote_routes.route('/<int:id>/', methods=['DELETE'])
+@login_required
+def delete_vote(id):
+    vote = Vote.query.get(id)
+    db.session.delete(vote)
+    db.session.commit()
+    return {'message': 'Vote deleted.'}

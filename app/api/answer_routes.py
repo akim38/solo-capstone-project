@@ -109,3 +109,39 @@ def post_comment(id):
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
+
+#post upvote on answer
+@answer_routes.route('/<int:id>/upvote/', methods=['POST'])
+@login_required
+def new_upvote(id):
+    new_vote = Vote(
+        user_id=current_user.id,
+        answer_id=id,
+        upvoted=True,
+        downvoted=False
+    )
+
+    db.session.add(new_vote)
+    db.session.commit()
+
+    answer = Answer.query.get(id)
+
+    return answer.to_dict()
+
+#post downvote on answer
+@answer_routes.route('/<int:id>/downvote/', methods=['POST'])
+@login_required
+def new_downvote(id):
+    new_vote = Vote(
+        user_id=current_user.id,
+        answer_id=id,
+        upvoted=False,
+        downvoted=True
+    )
+
+    db.session.add(new_vote)
+    db.session.commit()
+
+    answer = Answer.query.get(id)
+
+    return answer.to_dict()
