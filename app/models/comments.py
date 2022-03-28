@@ -1,4 +1,5 @@
 from .db import db
+from .user import User
 
 
 class Comment(db.Model):
@@ -13,9 +14,12 @@ class Comment(db.Model):
     answer = db.relationship("Answer", back_populates='comments')
 
     def to_dict(self):
+        user = User.query.get(self.user_id)
+
         return {
             'id': self.id,
             'comment': self.comment,
             'user_id': self.user_id,
-            'answer_id': self.answer_id
+            'answer_id': self.answer_id,
+            'username': user.username
         }

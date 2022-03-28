@@ -19,12 +19,8 @@ def votes():
 @login_required
 def vote(id):
     vote = Vote.query.get(id)
-    username = vote.user.username
 
-    vote_info = vote.to_dict()
-    vote_info['username'] = username
-
-    return {'vote': [vote_info]}
+    return {'vote': [vote.to_dict()]}
 
 
 #edit vote
