@@ -17,26 +17,39 @@ const Votes = ({ answer }) => {
     console.log('LOOK HERE ASDKLFJALSDKFJASL', answer)
 
     const upvote = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
-        if (upvoted) {
+        if (downvoted) {
             const res = await fetch(`/api/votes/${answer.user_vote}/`, {
-                method: "DELETE"
-            });
+                method: "PUT"
+            })
 
             if (res.ok) {
                 dispatch(getQuestionAnswers(questionId));
-                setUpvoted(false)
+                setUpvoted(true);
+                setDownvoted(false);
             }
 
         } else {
-            const res = await fetch(`/api/answers/${answer.id}/upvote/`, {
-                method: "POST"
-            });
+            if (upvoted) {
+                const res = await fetch(`/api/votes/${answer.user_vote}/`, {
+                    method: "DELETE"
+                });
 
-            if (res.ok) {
-                dispatch(getQuestionAnswers(questionId));
-                setUpvoted(true)
+                if (res.ok) {
+                    dispatch(getQuestionAnswers(questionId));
+                    setUpvoted(false)
+                }
+
+            } else {
+                const res = await fetch(`/api/answers/${answer.id}/upvote/`, {
+                    method: "POST"
+                });
+
+                if (res.ok) {
+                    dispatch(getQuestionAnswers(questionId));
+                    setUpvoted(true)
+                }
             }
         }
 
@@ -45,27 +58,38 @@ const Votes = ({ answer }) => {
     const downvote = async (e) => {
         e.preventDefault()
 
-        if (downvoted) {
+        if (upvoted) {
             const res = await fetch(`/api/votes/${answer.user_vote}/`, {
-                method: "DELETE"
-            });
+                method: "PUT"
+            })
 
             if (res.ok) {
                 dispatch(getQuestionAnswers(questionId));
-                setDownvoted(false)
+                setUpvoted(false);
+                setDownvoted(true);
             }
-
         } else {
-            const res = await fetch(`/api/answers/${answer.id}/downvote/`, {
-                method: "POST"
-            });
+            if (downvoted) {
+                const res = await fetch(`/api/votes/${answer.user_vote}/`, {
+                    method: "DELETE"
+                });
 
-            if (res.ok) {
-                dispatch(getQuestionAnswers(questionId));
-                setDownvoted(true)
+                if (res.ok) {
+                    dispatch(getQuestionAnswers(questionId));
+                    setDownvoted(false)
+                }
+
+            } else {
+                const res = await fetch(`/api/answers/${answer.id}/downvote/`, {
+                    method: "POST"
+                });
+
+                if (res.ok) {
+                    dispatch(getQuestionAnswers(questionId));
+                    setDownvoted(true)
+                }
             }
         }
-
     }
 
     return (
