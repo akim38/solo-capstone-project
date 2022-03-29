@@ -42,13 +42,39 @@ const Votes = ({ answer }) => {
 
     }
 
+    const downvote = async (e) => {
+        e.preventDefault()
+
+        if (downvoted) {
+            const res = await fetch(`/api/votes/${answer.user_vote}/`, {
+                method: "DELETE"
+            });
+
+            if (res.ok) {
+                dispatch(getQuestionAnswers(questionId));
+                setDownvoted(false)
+            }
+
+        } else {
+            const res = await fetch(`/api/answers/${answer.id}/downvote/`, {
+                method: "POST"
+            });
+
+            if (res.ok) {
+                dispatch(getQuestionAnswers(questionId));
+                setDownvoted(true)
+            }
+        }
+
+    }
+
     return (
         <div>
             <div className="upvote-section">
             <button type="submit" onClick={upvote}> up {answer.upvote_count}</button>
             </div>
             <div className="downvote-section">
-            <button> down {answer.downvote_count}</button>
+            <button type="submit" onClick={downvote}> down {answer.downvote_count}</button>
             </div>
 
         </div>
