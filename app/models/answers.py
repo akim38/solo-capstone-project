@@ -1,6 +1,7 @@
 from .db import db
 from .votes import Vote
 from .user import User
+from flask_login import current_user
 
 
 class Answer(db.Model):
@@ -36,6 +37,16 @@ class Answer(db.Model):
 
         user = User.query.get(self.user_id)
 
+        has_upvoted = False
+        for vote in self.votes:
+            if current_user.id == vote.user_id and vote.upvoted == True:
+                has_upvoted = True
+
+        has_downvoted = False
+        for vote in self.votes:
+            if current_user.id == vote.user_id and vote.downvoted == True:
+                has_downvoted = True
+
         return {
             'id': self.id,
             'answer': self.answer,
@@ -43,5 +54,7 @@ class Answer(db.Model):
             'question_id': self.question_id,
             'upvote_count': len(upvotes),
             'downvote_count': len(downvotes),
-            'username': user.username
+            'username': user.username,
+            'user_upvoted': has_upvoted,
+            'user_downvoted': has_downvoted
         }
