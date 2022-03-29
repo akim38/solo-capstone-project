@@ -47,6 +47,11 @@ class Answer(db.Model):
             if current_user.id == vote.user_id and vote.downvoted == True:
                 has_downvoted = True
 
+        user_vote = -1
+        for vote in self.votes:
+            if current_user.id == vote.user_id:
+                user_vote = vote.id
+
         return {
             'id': self.id,
             'answer': self.answer,
@@ -56,5 +61,6 @@ class Answer(db.Model):
             'downvote_count': len(downvotes),
             'username': user.username,
             'user_upvoted': has_upvoted,
-            'user_downvoted': has_downvoted
+            'user_downvoted': has_downvoted, 
+            'user_vote': user_vote
         }
