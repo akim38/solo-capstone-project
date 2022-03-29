@@ -7,6 +7,7 @@ import DeleteAnswer from "./DeleteAnswer";
 import './Answers.css'
 import AnswerEditFormModal from "../AnswerEditForm/AnswerEditFormModal";
 import Comments from "../Comments/Comments";
+import Votes from "../Votes/Votes";
 
 
 const Answers = () => {
@@ -33,6 +34,7 @@ const Answers = () => {
                             <DeleteAnswer answerId={answer.id} questionId={questionId} />
                         </div>
                     )}
+                    <Votes answer={answer} />
                     <Comments answerId={answer.id} answerComments={answer.comments} />
                 </div>
             ))}
