@@ -1,5 +1,10 @@
+.comment-section {
+    width: 100%;
+    background-color: #e8ecf0;
+}
+
 .comment-box {
-    padding-left: 50px;
+    padding-left: 10%;
 }
 
 
