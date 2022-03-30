@@ -37,7 +37,7 @@ const Answers = () => {
                         )}
                     <div className="answer-extras">
                             <Votes answer={answer} />
-                            <CommentForm answerId={answer.id} />
+                            {/* <CommentForm answerId={answer.id} /> */}
                     </div>
                     <Comments answerId={answer.id} answerComments={answer.comments} />
                 </div>

@@ -3,6 +3,36 @@
     background-color: #e8ecf0;
 }
 
+.comment-form-area {
+    padding-left: 10%;
+}
+
+.comment-form-area form{
+    width: 100%;
+}
+
+.comment-form {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.comment-form input {
+    width: 70%;
+    /* height: 150px; */
+    padding: 6px 10px;
+    /* box-sizing: border-box; */
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+
+.comment-button-container {
+    float: right;
+}
+
 .comment-box {
     padding-left: 10%;
 }
@@ -58,7 +88,7 @@
     width: 100%;
 }
 
-.edit-comment-form textarea {
+.edit-comment-form input {
     resize: vertical;
     width: 75%;
 }

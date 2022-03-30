@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { getQuestionAnswers } from "../../store/answers";
 import { createComment } from "../../store/comments";
 
+import '../Comments/Comments.css';
+
 const CommentForm = ({ answerId }) => {
 
     const { questionId } = useParams();
@@ -40,10 +42,10 @@ const CommentForm = ({ answerId }) => {
 
     return (
         <div className="comment-form-area">
-            <button className="show-comment-form" onClick={() => setShowForm(!showForm)}>
+            {/* <button className="show-comment-form" onClick={() => setShowForm(!showForm)}>
                 Reply
-            </button>
-            {showForm && (
+            </button> */}
+            {/* {showForm && ( */}
                 <div className="comment-form">
                     {errors.length > 0 && (
                         <div className="errors">
@@ -53,9 +55,10 @@ const CommentForm = ({ answerId }) => {
                             </ul>
                         </div>
                     )}
+                    <ion-icon size="large" name="person-circle-outline"></ion-icon>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="comment">
-                            <textarea
+                            <input
                                 type="text"
                                 className="comment"
                                 placeholder="Write a comment..."
@@ -65,11 +68,11 @@ const CommentForm = ({ answerId }) => {
                             />
                         </label>
                         <div className="comment-button-container">
-                            <button id="post-comment" type="submit">Add Comment</button>
+                            <button id="post-comment" type="submit">Reply</button>
                         </div>
                     </form>
                 </div>
-            )}
+            {/* )} */}
         </div>
     )
 };

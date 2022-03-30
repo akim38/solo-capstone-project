@@ -43,7 +43,7 @@ const EditComment = ({ comment }) => {
             <form onSubmit={handleSubmit}>
                 <div className="edit-comment-form">
                     <label htmlFor="comment">
-                            <textarea
+                            <input
                                 type="text"
                                 className="comment"
                                 id='comment'
