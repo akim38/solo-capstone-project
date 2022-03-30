@@ -26,7 +26,7 @@ const Answers = () => {
         <div className="answers-box">
             {answerList.map(answer => (
                 <div className="answer-box" key={answer.answer}>
-                    <h5>{answer.username}</h5>
+                    <h5><ion-icon size="large" name="person-circle-outline"></ion-icon> {answer.username}</h5>
                     <p>{answer.answer}</p>
                     {sessionUser.id === answer?.user_id && (
                         <div className="edit-answer-btn-container">
