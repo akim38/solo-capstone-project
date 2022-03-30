@@ -16,19 +16,19 @@ const Comment = ({ comment }) => {
     };
 
     return (
-        <div>
+        <div className="single-comment">
             {showCommentEdit ? (
                 <EditComment comment={comment} />
             ) : (
                 <p>{comment.comment}</p>
             )}
             {sessionUser.id === comment?.user_id && (
-                <div>
-                    <button onClick={() => setShowButtons(!showButtons)}>
+                <div className="dropdown">
+                    <button onClick={() => setShowButtons(!showButtons)} className="dropbtn">
                         <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
                     </button>
                     {showButtons && (
-                        <div>
+                        <div className="dropdown-content">
                             <button onClick={editComment}>Edit</button>
                             <DeleteComment commentId={comment.id} />
                         </div>

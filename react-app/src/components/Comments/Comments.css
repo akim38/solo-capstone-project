@@ -1,3 +1,42 @@
 .comment-box {
     padding-left: 50px;
 }
+
+
+.single-comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropbtn {
+    border: none;
+    background-color: #f5f7fa;
+    font-size: 24px;
+    border-radius: 25%;
+    padding-top: 5px;
+}
+
+.dropbtn:hover {
+    background-color: var(--accent-color-3);
+}
+
+.dropdown-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content button {
+    border: none;
+    padding: 5px 0px;
+
+}
+
+.dropdown-content button:hover {
+    background-color: var(--accent-color-3);
+}
