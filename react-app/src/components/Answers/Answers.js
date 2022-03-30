@@ -29,14 +29,16 @@ const Answers = () => {
                 <div className="answer-box" key={answer.answer}>
                     <h5><ion-icon size="large" name="person-circle-outline"></ion-icon> {answer.username}</h5>
                     <p>{answer.answer}</p>
-                    <Votes answer={answer} />
-                    <CommentForm answerId={answer.id} />
-                    {sessionUser.id === answer?.user_id && (
-                        <div className="edit-answer-btn-container">
-                            <AnswerEditFormModal answerId={answer.id}/>
-                            <DeleteAnswer answerId={answer.id} questionId={questionId} />
-                        </div>
-                    )}
+                        {sessionUser.id === answer?.user_id && (
+                            <div className="edit-answer-btn-container">
+                                <AnswerEditFormModal answerId={answer.id}/>
+                                <DeleteAnswer answerId={answer.id} questionId={questionId} />
+                            </div>
+                        )}
+                    <div className="answer-extras">
+                            <Votes answer={answer} />
+                            <CommentForm answerId={answer.id} />
+                    </div>
                     <Comments answerId={answer.id} answerComments={answer.comments} />
                 </div>
             ))}

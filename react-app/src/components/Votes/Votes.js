@@ -14,7 +14,7 @@ const Votes = ({ answer }) => {
     const [upvoted, setUpvoted] = useState(answer.user_upvoted);
     const [downvoted, setDownvoted] = useState(answer.user_downvoted);
 
-    console.log('LOOK HERE ASDKLFJALSDKFJASL', answer)
+    // console.log('LOOK HERE ASDKLFJALSDKFJASL', answer)
 
     const upvote = async (e) => {
         e.preventDefault();

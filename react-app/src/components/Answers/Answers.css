@@ -22,3 +22,7 @@
 .edit-answer-btn-container button:hover {
     background-color: var(--accent-color-3);
 }
+
+.answer-extras {
+    display: flex;
+}
