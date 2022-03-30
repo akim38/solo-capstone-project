@@ -8,6 +8,7 @@ import './Answers.css'
 import AnswerEditFormModal from "../AnswerEditForm/AnswerEditFormModal";
 import Comments from "../Comments/Comments";
 import Votes from "../Votes/Votes";
+import CommentForm from "../CommentForm/CommentForm";
 
 
 const Answers = () => {
@@ -28,13 +29,14 @@ const Answers = () => {
                 <div className="answer-box" key={answer.answer}>
                     <h5><ion-icon size="large" name="person-circle-outline"></ion-icon> {answer.username}</h5>
                     <p>{answer.answer}</p>
+                    <Votes answer={answer} />
+                    <CommentForm answerId={answer.id} />
                     {sessionUser.id === answer?.user_id && (
                         <div className="edit-answer-btn-container">
                             <AnswerEditFormModal answerId={answer.id}/>
                             <DeleteAnswer answerId={answer.id} questionId={questionId} />
                         </div>
                     )}
-                    <Votes answer={answer} />
                     <Comments answerId={answer.id} answerComments={answer.comments} />
                 </div>
             ))}
