@@ -89,6 +89,12 @@
 }
 
 .edit-comment-form input {
-    resize: vertical;
-    width: 75%;
+    width: 77%;
+    /* height: 150px; */
+    padding: 6px 10px;
+    /* box-sizing: border-box; */
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
 }
