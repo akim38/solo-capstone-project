@@ -7,10 +7,12 @@ import './Comments.css';
 
 const Comment = ({ comment }) => {
     const sessionUser = useSelector(state => state.session.user)
+    const [showButtons, setShowButtons] = useState(false);
     const [showCommentEdit, setShowCommentEdit] = useState(false);
 
     const editComment = () => {
-        setShowCommentEdit(!showCommentEdit)
+        setShowCommentEdit(!showCommentEdit);
+        setShowButtons(!showButtons);
     };
 
     return (
@@ -22,8 +24,15 @@ const Comment = ({ comment }) => {
             )}
             {sessionUser.id === comment?.user_id && (
                 <div>
-                    <button onClick={editComment}>Edit</button>
-                    <DeleteComment commentId={comment.id} />
+                    <button onClick={() => setShowButtons(!showButtons)}>
+                        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                    </button>
+                    {showButtons && (
+                        <div>
+                            <button onClick={editComment}>Edit</button>
+                            <DeleteComment commentId={comment.id} />
+                        </div>
+                    )}
                 </div>
             )}
         </div>
