@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getQuestionAnswers } from "../../store/answers";
 
+import './Votes.css';
+
 const Votes = ({ answer }) => {
     //if user has not yet voted, button needs to be unfilled and clicking will post
     // if user has voted, button needs to be filled and clicking will delete
@@ -93,14 +95,11 @@ const Votes = ({ answer }) => {
     }
 
     return (
-        <div>
-            <div className="upvote-section">
-            <button type="submit" onClick={upvote}> up {answer.upvote_count}</button>
+        <div className="vote-area">
+            <div className="vote-btn">
+                <button type="submit" onClick={upvote}> <ion-icon name="arrow-up-outline"></ion-icon> {answer.upvote_count}</button>
+                <button type="submit" onClick={downvote}> <ion-icon name="arrow-down-outline"></ion-icon> {answer.downvote_count}</button>
             </div>
-            <div className="downvote-section">
-            <button type="submit" onClick={downvote}> down {answer.downvote_count}</button>
-            </div>
-
         </div>
     )
 }

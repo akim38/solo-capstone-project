@@ -1,0 +1,16 @@
+.vote-area {
+    display: flex;
+    margin-right: 20px
+}
+
+.vote-btn button {
+    border: none;
+    background-color: #f5f7fa;
+    border-radius: 25%;
+    padding-top: 5px;
+}
+
+.vote-btn button:hover {
+    background-color: var(--accent-color-3);
+}
+
