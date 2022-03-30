@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.comment-part {
+    width: 100%;
+}
+
 .dropbtn {
     border: none;
     background-color: #f5f7fa;
@@ -39,4 +43,17 @@
 
 .dropdown-content button:hover {
     background-color: var(--accent-color-3);
+}
+
+.edit-comment-area {
+    width: 100%;
+}
+
+.edit-comment-area form {
+    width: 100%;
+}
+
+.edit-comment-form textarea {
+    resize: vertical;
+    width: 75%;
 }

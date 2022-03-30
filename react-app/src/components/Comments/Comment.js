@@ -17,11 +17,14 @@ const Comment = ({ comment }) => {
 
     return (
         <div className="single-comment">
-            {showCommentEdit ? (
-                <EditComment comment={comment} />
-            ) : (
-                <p>{comment.comment}</p>
-            )}
+            <div className="comment-part">
+                {showCommentEdit ? (
+                    <EditComment comment={comment} />
+                ) : (
+                    <p>{comment.comment}</p>
+                )}
+
+            </div>
             {sessionUser.id === comment?.user_id && (
                 <div className="dropdown">
                     <button onClick={() => setShowButtons(!showButtons)} className="dropbtn">
