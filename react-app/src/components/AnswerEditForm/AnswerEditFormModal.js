@@ -9,7 +9,8 @@ const AnswerEditFormModal = ({ answerId }) => {
     return (
         <div>
             <button className="answer-edit-modal" onClick={() => setShowModal(true)}>
-                <ion-icon name="pencil-outline"></ion-icon>
+                {/* <ion-icon name="pencil-outline"></ion-icon> */}
+                Edit
             </button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
