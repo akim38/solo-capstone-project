@@ -26,3 +26,9 @@
 .answer-extras {
     display: flex;
 }
+
+.answerer-name {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
