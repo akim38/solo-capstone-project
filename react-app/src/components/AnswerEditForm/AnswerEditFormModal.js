@@ -3,13 +3,12 @@ import { Modal } from "../../context/Modal";
 import AnswerEditForm from "./AnswerEditForm";
 
 
-const AnswerEditFormModal = ({ answerId }) => {
+const AnswerEditFormModal = ({ answerId, setShowButtons }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
         <div>
             <button className="answer-edit-modal" onClick={() => setShowModal(true)}>
-                {/* <ion-icon name="pencil-outline"></ion-icon> */}
                 Edit
             </button>
             {showModal && (

@@ -29,7 +29,8 @@ const AnswerEditForm = ({ answerId, setShowModal }) => {
             setErrors(data.errors)
         } else {
             setShowModal(false);
-            history.push(`/questions/${questionId}`)
+            dispatch(getQuestionAnswers(questionId))
+            // history.push(`/questions/${questionId}`)
         }
     };
 

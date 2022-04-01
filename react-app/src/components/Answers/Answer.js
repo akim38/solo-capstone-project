@@ -27,7 +27,7 @@ const Answer = ({answer}) => {
                         </button>
                         {showButtons && (
                             <div className="edit-answer-btn-container dropdown-content">
-                                <AnswerEditFormModal answerId={answer.id}/>
+                                <AnswerEditFormModal answerId={answer.id} setShowButtons={setShowButtons} />
                                 <DeleteAnswer answerId={answer.id} questionId={questionId} />
                             </div>
                         )}
