@@ -25,6 +25,8 @@
 
 .answer-extras {
     display: flex;
+    height: 40px;
+    align-items: center;
 }
 
 .answerer-name {
@@ -42,5 +44,5 @@
 }
 
 .answer-area p {
-    width: 95%
+    width: 95%;
 }
