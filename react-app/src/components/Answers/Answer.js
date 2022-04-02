@@ -19,23 +19,25 @@ const Answer = ({answer}) => {
 
     return (
         <div>
-            <p>{answer.answer}</p>
-                {sessionUser.id === answer?.user_id && (
-                    <div className="dropdown">
-                        <button onClick={() => setShowButtons(!showButtons)} className="dropbtn">
-                        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
-                        </button>
-                        {showButtons && (
-                            <div className="edit-answer-btn-container dropdown-content">
-                                <AnswerEditFormModal answerId={answer.id} setShowButtons={setShowButtons} />
-                                <DeleteAnswer answerId={answer.id} questionId={questionId} />
-                            </div>
-                        )}
-                    </div>
-                )}
+            <div className="answer-area">
+                <p>{answer.answer}</p>
+            </div>
             <div className="answer-extras">
                     <Votes answer={answer} />
                     {/* <CommentForm answerId={answer.id} /> */}
+                    {sessionUser.id === answer?.user_id && (
+                        <div className="dropdown">
+                            <button onClick={() => setShowButtons(!showButtons)} className="dropbtn">
+                            <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                            </button>
+                            {showButtons && (
+                                <div className="edit-answer-btn-container dropdown-content">
+                                    <AnswerEditFormModal answerId={answer.id} setShowButtons={setShowButtons} />
+                                    <DeleteAnswer answerId={answer.id} questionId={questionId} />
+                                </div>
+                            )}
+                        </div>
+                    )}
             </div>
         </div>
     )

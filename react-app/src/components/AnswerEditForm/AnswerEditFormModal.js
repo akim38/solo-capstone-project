@@ -3,7 +3,7 @@ import { Modal } from "../../context/Modal";
 import AnswerEditForm from "./AnswerEditForm";
 
 
-const AnswerEditFormModal = ({ answerId, setShowButtons }) => {
+const AnswerEditFormModal = ({ answerId }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (

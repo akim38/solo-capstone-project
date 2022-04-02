@@ -36,3 +36,11 @@
 .answer-edit-modal {
     width: 100%;
 }
+
+.answer-area {
+    display: flex;
+}
+
+.answer-area p {
+    width: 95%
+}
