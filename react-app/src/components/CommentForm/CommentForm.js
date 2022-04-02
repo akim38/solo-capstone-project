@@ -66,10 +66,8 @@ const CommentForm = ({ answerId }) => {
                                 value={comment}
                                 onChange={e => setComment(e.target.value)}
                             />
-                        </label>
-                        <div className="comment-button-container">
                             <button id="post-comment" disabled={!comment} type="submit">Reply</button>
-                        </div>
+                        </label>
                     </form>
                 </div>
             {/* )} */}
