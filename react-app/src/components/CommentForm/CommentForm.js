@@ -47,14 +47,14 @@ const CommentForm = ({ answerId }) => {
             </button> */}
             {/* {showForm && ( */}
                 <div className="comment-form">
-                    {errors.length > 0 && (
+                    {/* {errors.length > 0 && (
                         <div className="errors">
                             The following errors were found:
                             <ul>
                                 {errors.map(error => <li key={error}>{error}</li>)}
                             </ul>
                         </div>
-                    )}
+                    )} */}
                     <ion-icon size="large" name="person-circle-outline"></ion-icon>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="comment">
@@ -68,7 +68,7 @@ const CommentForm = ({ answerId }) => {
                             />
                         </label>
                         <div className="comment-button-container">
-                            <button id="post-comment" type="submit">Reply</button>
+                            <button id="post-comment" disabled={!comment} type="submit">Reply</button>
                         </div>
                     </form>
                 </div>
