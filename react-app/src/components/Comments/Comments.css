@@ -18,17 +18,15 @@
 
 .comment-form-area form{
     width: 100%;
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
+    justify-content: start; */
 }
 
 .comment-form input {
-    width: 75%;
-    /* height: 150px; */
+    width: 72%;
     padding: 6px 10px;
-    /* box-sizing: border-box; */
     border: 1.5px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
@@ -37,10 +35,12 @@
 
 .comment-box {
     padding-left: 10%;
-    padding-right: 1%
+    padding-right: 1%;
+    width: 89%;
 }
 
 .single-comment {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,6 +48,23 @@
 
 .comment-part {
     width: 100%;
+}
+
+.edit-comment-area {
+    width: 100%;
+}
+
+.edit-comment-area form {
+    width: 100%;
+}
+
+.edit-comment-area input {
+    width: 78%;
+    padding: 6px 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
 }
 
 .dropbtn {
@@ -83,20 +100,6 @@
 
 .edit-comment-area {
     width: 100%;
-}
-
-.edit-comment-area form {
-    width: 100%;
-    display: flex;
-}
-
-.edit-comment-form input {
-    width: 77%;
-    padding: 6px 10px;
-    border: 1.5px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    font-size: 16px;
 }
 
 .commenter-name {

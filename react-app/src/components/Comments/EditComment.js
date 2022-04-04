@@ -31,7 +31,7 @@ const EditComment = ({ comment }) => {
     }
 
     return (
-        <div className="edit-comment-area comment-form">
+        <div className="edit-comment-area">
             {/* {errors.length > 0 && (
                 <div className="errors">
                     The following errors were found:
@@ -41,18 +41,16 @@ const EditComment = ({ comment }) => {
                 </div>
             )} */}
             <form onSubmit={handleSubmit}>
-                    <label htmlFor="comment">
-                            <input
-                                type="text"
-                                className="comment"
-                                id='comment'
-                                value={edittedComment}
-                                onChange={e => setEdittedComment(e.target.value)}
-                            />
-                        <button id="post-comment" type="submit">Submit</button>
-                    </label>
-                    <div className="comment-button-container">
-                    </div>
+                <label htmlFor="comment">
+                        <input
+                            type="text"
+                            className="comment"
+                            id='comment'
+                            value={edittedComment}
+                            onChange={e => setEdittedComment(e.target.value)}
+                        />
+                    <button id="post-comment" type="submit">Submit</button>
+                </label>
             </form>
 
         </div>
