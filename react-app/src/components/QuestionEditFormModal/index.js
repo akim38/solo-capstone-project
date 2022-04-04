@@ -4,7 +4,7 @@ import QuestionEditForm from "./QuestionEditForm";
 
 import './QuestionEditFormModal.css'
 
-const QuestionEditFormModal = () => {
+const QuestionEditFormModal = ({ setShowButtons }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
@@ -14,7 +14,7 @@ const QuestionEditFormModal = () => {
             </button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <QuestionEditForm setShowModal={setShowModal} />
+                    <QuestionEditForm setShowModal={setShowModal} setShowButtons={setShowButtons} />
                 </Modal>
             )}
         </>

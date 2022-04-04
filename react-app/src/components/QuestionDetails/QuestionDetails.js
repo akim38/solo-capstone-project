@@ -47,7 +47,7 @@ const QuestionDetails = () => {
                             </button>
                             {showButtons && (
                                 <div className="dropdown-content">
-                                    <QuestionEditFormModal />
+                                    <QuestionEditFormModal setShowButtons={setShowButtons} />
                                     <button type="submit" className="delete-question-button" onClick={deleteQuestion}>
                                     Delete
                                     </button>
