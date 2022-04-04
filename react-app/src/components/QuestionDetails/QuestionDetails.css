@@ -20,22 +20,26 @@
 }
 
 
-.detail-button-container {
+.question-author-area {
     display: flex;
-    justify-content: end;
+    align-items: center;
 }
 
-.detail-button-container button {
+.question-author-area p {
+    width: 95%;
+}
+
+/* .detail-button-container button {
     background-color: rgba(255, 255, 255, .3);
     margin-right: 5px;
     border: 1px solid var(--accent-color-3);
     border-radius: 2px;
     padding: 3px 7px;
-}
+} */
 
-.detail-button-container button:hover {
+/* .detail-button-container button:hover {
     background-color: var(--accent-color-3);
-}
+} */
 
 .author {
     font-style: italic;
