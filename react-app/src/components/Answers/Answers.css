@@ -6,7 +6,7 @@
     margin: 10px 0px;
 }
 
-.edit-answer-btn-container {
+/* .edit-answer-btn-container {
     display: flex;
     justify-content: end;
 }
@@ -17,8 +17,32 @@
     border: 1px solid var(--accent-color-3);
     border-radius: 2px;
     padding: 3px 7px;
+} */
+
+/* .edit-answer-btn-container button:hover {
+    background-color: var(--accent-color-3);
+} */
+
+.answer-extras {
+    display: flex;
+    height: 40px;
+    align-items: center;
 }
 
-.edit-answer-btn-container button:hover {
-    background-color: var(--accent-color-3);
+.answerer-name {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.answer-edit-modal {
+    width: 100%;
+}
+
+.answer-area {
+    display: flex;
+}
+
+.answer-area p {
+    width: 95%;
 }

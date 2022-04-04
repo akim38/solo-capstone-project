@@ -15,7 +15,8 @@ const DeleteAnswer = ({ answerId, questionId }) => {
 
     return (
         <button type="submit" className="delete-answer-button" onClick={deleteAnswer}>
-            <ion-icon name="trash-bin-outline"></ion-icon>
+            {/* <ion-icon name="trash-bin-outline"></ion-icon> */}
+            Delete
         </button>
     )
 };

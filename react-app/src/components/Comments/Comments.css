@@ -1,3 +1,122 @@
+.comment-section {
+    width: 100%;
+    background-color: #e8ecf0;
+    border-radius: 4px;
+    padding-bottom: 8px;
+}
+
+.comment-form-area {
+    padding-left: 10%;
+    padding-right: 1%
+}
+
+.comment-form {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.comment-form-area form{
+    width: 100%;
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start; */
+}
+
+.comment-form input {
+    width: 72%;
+    padding: 6px 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+
 .comment-box {
-    padding-left: 50px;
+    padding-left: 10%;
+    padding-right: 1%;
+    width: 89%;
+}
+
+.single-comment {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-part {
+    width: 100%;
+}
+
+.edit-comment-area {
+    width: 100%;
+}
+
+.edit-comment-area form {
+    width: 100%;
+}
+
+.edit-comment-area input {
+    width: 78%;
+    padding: 6px 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+
+.dropbtn {
+    border: none;
+    background-color: #f5f7fa00;
+    font-size: 24px;
+    border-radius: 25%;
+    padding-top: 5px;
+}
+
+.dropbtn:hover {
+    background-color: var(--accent-color-3);
+}
+
+.dropdown-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /* z-index: 1; */
+}
+
+.dropdown-content button {
+    border: none;
+    padding: 5px 0px;
+}
+
+.dropdown-content button:hover {
+    background-color: var(--accent-color-3);
+}
+
+.edit-comment-area {
+    width: 100%;
+}
+
+.commenter-name {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+#post-comment {
+    background-color: var(--main-color);
+    padding: 6px 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#post-comment:hover {
+    background-color: var(--accent-color-3);
 }

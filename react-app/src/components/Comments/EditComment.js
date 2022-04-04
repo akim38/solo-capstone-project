@@ -31,27 +31,25 @@ const EditComment = ({ comment }) => {
     }
 
     return (
-        <div>
-            {errors.length > 0 && (
+        <div className="edit-comment-area">
+            {/* {errors.length > 0 && (
                 <div className="errors">
                     The following errors were found:
                     <ul>
                         {errors.map(error => <li key={error}>{error}</li>)}
                     </ul>
                 </div>
-            )}
+            )} */}
             <form onSubmit={handleSubmit}>
                 <label htmlFor="comment">
-                    <textarea
-                        type="text"
-                        className="comment"
-                        id='comment'
-                        value={edittedComment}
-                        onChange={e => setEdittedComment(e.target.value)}
-                    />
-                    <div className="comment-button-container">
-                        <button id="post-comment" type="submit">Submit</button>
-                    </div>
+                        <input
+                            type="text"
+                            className="comment"
+                            id='comment'
+                            value={edittedComment}
+                            onChange={e => setEdittedComment(e.target.value)}
+                        />
+                    <button id="post-comment" type="submit">Submit</button>
                 </label>
             </form>
 

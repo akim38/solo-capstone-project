@@ -7,23 +7,35 @@ import './Comments.css';
 
 const Comment = ({ comment }) => {
     const sessionUser = useSelector(state => state.session.user)
+    const [showButtons, setShowButtons] = useState(false);
     const [showCommentEdit, setShowCommentEdit] = useState(false);
 
     const editComment = () => {
-        setShowCommentEdit(!showCommentEdit)
+        setShowCommentEdit(!showCommentEdit);
+        setShowButtons(!showButtons);
     };
 
     return (
-        <div>
-            {showCommentEdit ? (
-                <EditComment comment={comment} />
-            ) : (
-                <p>{comment.comment}</p>
-            )}
+        <div className="single-comment">
+            <div className="comment-part">
+                {showCommentEdit ? (
+                    <EditComment comment={comment} />
+                ) : (
+                    <p>{comment.comment}</p>
+                )}
+
+            </div>
             {sessionUser.id === comment?.user_id && (
-                <div>
-                    <button onClick={editComment}>Edit</button>
-                    <DeleteComment commentId={comment.id} />
+                <div className="dropdown">
+                    <button onClick={() => setShowButtons(!showButtons)} className="dropbtn">
+                        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+                    </button>
+                    {showButtons && (
+                        <div className="dropdown-content">
+                            <button onClick={editComment}>Edit</button>
+                            <DeleteComment commentId={comment.id} />
+                        </div>
+                    )}
                 </div>
             )}
         </div>

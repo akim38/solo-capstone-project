@@ -7,10 +7,10 @@ const Comments = ({ answerId, answerComments }) =>  {
 
     return (
         <div className="comment-section">
-            <CommentForm answerId={answerId} />
+            <CommentForm  answerId={answerId} />
             {answerComments.map(comment => (
                 <div className="comment-box" key={comment.comment}>
-                    <h5>{comment.username}</h5>
+                    <p className="commenter-name"><ion-icon size="large" name="person-circle-outline"></ion-icon> {comment.username}</p>
                     <Comment comment={comment} />
                 </div>
             ))}
