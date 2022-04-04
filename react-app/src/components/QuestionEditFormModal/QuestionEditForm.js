@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { editQuestion, getSingleQuestion } from "../../store/questions";
 
 
-const QuestionEditForm = ({ setShowModal }) => {
+const QuestionEditForm = ({ setShowModal, setShowButtons }) => {
     const { questionId } = useParams();
     const dispatch = useDispatch();
     // const history = useHistory();
@@ -28,6 +28,7 @@ const QuestionEditForm = ({ setShowModal }) => {
             setErrors(data.errors)
         } else {
             setShowModal(false);
+            setShowButtons(false);
             dispatch(getSingleQuestion(questionId))
         }
     };

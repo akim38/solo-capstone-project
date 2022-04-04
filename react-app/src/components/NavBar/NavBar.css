@@ -2,10 +2,11 @@ nav {
     background-color: white;
     border-bottom: 0.8px solid rgba(0, 0, 0, 0.226);
     width: 100%;
-    height: auto;
+    height: 75px;
     top: 0px;
     position: fixed;
-    box-shadow: 5px 5px 5px var(--accent-color-3);
+    /* box-shadow: 5px 5px 5px var(--accent-color-3); */
+    box-shadow: 0px 2px 8px 0px var(--accent-color-3);
     display: inline-block;
     text-align:center;
     display: flex;
@@ -13,24 +14,31 @@ nav {
     z-index: 10;
 }
 
-ul {
-    list-style-type: none;
+.nav-div {
+    width: 50%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-li {
-    /* display: inline-block; */
-    margin-right: 30px;
+    justify-content: space-between;
     font-size: 18px;
 }
 
-.nav-div {
-    width: 700px;
+.nav-div div {
+    border-radius: 20px;
+    padding: 8px 20px;
 }
 
-.nav-icon {
-    font-size: 20px;
+
+.nav-icon:hover {
+    background-color: var(--accent-color-3);
 }
 
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title p {
+    font-size: 22px;
+    color: rgb(48, 144, 235);
+    font-weight: bold;
+}

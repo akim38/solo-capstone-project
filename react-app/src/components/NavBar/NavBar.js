@@ -10,36 +10,38 @@ const NavBar = () => {
   return (
     <nav>
       <div className='nav-div'>
-        <ul>
-          {/* <li>
-            <NavLink to='/' exact={true} activeClassName='active'>
-            QueWhat
-            </NavLink>
-          </li> */}
-          <li className='nav-icon'>
-            <NavLink to='/' exact={true} activeClassName='active'>
-            <ion-icon name="home-outline"></ion-icon>
-            </NavLink>
-          </li>
-          <li>
+          <div className='title'>
+            <div>
+              <NavLink to='/' exact={true} activeClassName='active'>
+              <p>QueWhat</p>
+              </NavLink>
+            </div>
+            <div className='nav-icon'>
+              <NavLink to='/' exact={true} activeClassName='active'>
+              <i class="fa-solid fa-house"></i>
+              Home
+              </NavLink>
+            </div>
+
+          </div>
+          <div className='nav-icon'>
+            <a href='https://github.com/akim38/solo-capstone-project' className="about__link" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+          <div className='nav-icon'>
+            <a href='https://www.linkedin.com/in/aletheia-kim-47086922a/' className="about__link" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+          <div className='nav-icon'>
             <NavLink to='/about' exact={true} activeClassName='active'>
               About
             </NavLink>
-          </li>
-          <li className='nav-icon'>
-            <a href='https://github.com/akim38/solo-capstone-project' className="about__link" target="_blank" rel="noreferrer">
-            <ion-icon className='icon' name="logo-github"></ion-icon>
-            </a>
-          </li>
-          <li className='nav-icon'>
-            <a href='https://www.linkedin.com/in/aletheia-kim-47086922a/' className="about__link" target="_blank" rel="noreferrer">
-            <ion-icon className='icon' name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-          <li>
+          </div>
+          <div>
             <LogoutButton />
-          </li>
-        </ul>
+          </div>
       </div>
     </nav>
   );
