@@ -17,7 +17,7 @@ const QuestionForm = ({ setShowModal }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log('handle submission')
+        
         const payload = {
             question,
             details

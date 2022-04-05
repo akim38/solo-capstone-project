@@ -18,7 +18,6 @@ const Votes = ({ answer }) => {
     const [upvoteColor, setUpvoteColor] = useState(upvoted ? 'rgb(48, 144, 235)' : '');
     const [downvoteColor, setDownvoteColor] = useState(downvoted ? 'rgb(48, 144, 235)' : '')
 
-    // console.log('LOOK HERE ASDKLFJALSDKFJASL', answer)
 
     const upvote = async (e) => {
         e.preventDefault();
