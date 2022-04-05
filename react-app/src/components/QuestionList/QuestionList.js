@@ -9,9 +9,9 @@ import './QuestionList.css'
 const QuestionList = () => {
     const dispatch = useDispatch();
     const questions = useSelector(state => state.questions.byId);
-    console.log(questions)
+
     const questionList = Object.values(questions).reverse();
-    console.log(questionList)
+
 
     useEffect(() => {
         dispatch(getQuestions());

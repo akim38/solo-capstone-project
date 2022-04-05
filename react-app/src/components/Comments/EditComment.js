@@ -19,7 +19,6 @@ const EditComment = ({ comment }) => {
         const payload = {
             comment: edittedComment
         };
-        console.log('this payload', payload)
 
         const data = await dispatch(editComment(payload, comment.id))
         if (data.errors) {
